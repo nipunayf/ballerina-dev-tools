@@ -67,9 +67,18 @@ public record PackageResponse(
             long createdDate,
             int pullCount,
             String visibility,
-            List<String> modules,
+            List<Module> modules,
             String balToolId,
             String graalvmCompatible
+    ) { }
+
+    public record Module(
+            String name,
+            String summary,
+            String readme,
+            String apiDocURL,
+            boolean executable,
+            String packageUrl
     ) { }
 
     public record Highlighting(

@@ -47,7 +47,7 @@ public class RemoteCentral implements CentralAPI {
 
     @Override
     public PackageResponse searchPackages(Map<String, String> queryMap) {
-        return restClient.searchPackages(queryMap);
+        return restClient.packageKeywords(queryMap);
     }
 
     @Override

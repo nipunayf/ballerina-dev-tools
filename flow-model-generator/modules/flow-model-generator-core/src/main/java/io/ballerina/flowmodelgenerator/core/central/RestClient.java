@@ -35,6 +35,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 import java.util.Map;
 
 import static io.ballerina.projects.util.ProjectUtils.getAccessTokenOfCLI;
@@ -51,6 +52,7 @@ class RestClient {
     private static final String SEARCH_SYMBOLS = "search-symbols";
     private static final String SEARCH_PACKAGES = "search-packages";
     private static final String CONNECTOR = "connector";
+    private static final String PACKAGE_KEYWORDS = "packages/keywords";
     private final Gson gson;
     private final CentralAPIClient centralClient;
 
@@ -106,6 +108,17 @@ class RestClient {
         String queryMapString = getQueryMapString(queryMap);
         String response = query(SEARCH_SYMBOLS, queryMapString);
         return gson.fromJson(response, SymbolResponse.class);
+    }
+
+    public PackageResponse packageKeywords(Map<String, String> queryMap) {
+        Map<String, String> queryMapCopy = new HashMap<>(queryMap);
+        String q = queryMapCopy.remove("q");
+        if (q != null) {
+            queryMapCopy.put("names", q);
+        }
+        String queryMapString = getQueryMapString(queryMapCopy);
+        String response = query(PACKAGE_KEYWORDS, queryMapString);
+        return gson.fromJson(response, PackageResponse.class);
     }
 
     private String getQueryMapString(Map<String, String> queryMap) {
