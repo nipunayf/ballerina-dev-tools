@@ -30,7 +30,7 @@ jobs:
         env:
           packageUser: ${{ github.actor }}
           packagePAT: ${{ secrets.GITHUB_TOKEN }}
-        run: ./gradlew build -x :docerina-ui:npmTestDocerinaUI
+        run: ./gradlew build -x :docerina-ui:build -x testerina-report-tools:build
 
       - name: Generate Codecov Report
         if: github.event_name == 'pull_request'
@@ -61,4 +61,4 @@ jobs:
         env:
           packageUser: ${{ github.actor }}
           packagePAT: ${{ secrets.GITHUB_TOKEN }}
-        run: ./gradlew.bat build -x :docerina-ui:npmTestDocerinaUI
+        run: ./gradlew build -x :docerina-ui:build -x testerina-report-tools:build
