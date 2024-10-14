@@ -127,6 +127,7 @@ public record Property(Metadata metadata, String valueType, Object valueTypeCons
         SINGLE_SELECT,
         MULTIPLE_SELECT,
         VIEW,
+        RECORD,
         INCLUSION,
         UNION
     }
@@ -135,6 +136,7 @@ public record Property(Metadata metadata, String valueType, Object valueTypeCons
         return switch (s) {
             case "inclusion" -> ValueType.INCLUSION;
             case "union" -> ValueType.UNION;
+            case "record" -> ValueType.RECORD;
             default -> ValueType.EXPRESSION;
         };
     }

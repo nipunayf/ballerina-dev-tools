@@ -140,6 +140,7 @@ public class NewConnection extends NodeBuilder {
 
     private static Object getTypeConstraint(ConnectorResponse.Parameter param, String typeName) {
         return switch (typeName) {
+            case "record" -> param.fields();
             case "inclusion" -> param.inclusionType();
             default -> typeName;
         };
