@@ -14,7 +14,7 @@
         "module": "grpc",
         "object": "Client",
         "symbol": "init",
-        "id": 100
+        "id": 67
       },
       "enabled": true
     },
@@ -30,7 +30,7 @@
         "module": "ldap",
         "object": "Client",
         "symbol": "init",
-        "id": 210
+        "id": 183
       },
       "enabled": true
     },
@@ -46,7 +46,7 @@
         "module": "mqtt",
         "object": "Client",
         "symbol": "init",
-        "id": 238
+        "id": 201
       },
       "enabled": true
     },
@@ -62,7 +62,7 @@
         "module": "ftp",
         "object": "Client",
         "symbol": "init",
-        "id": 265
+        "id": 263
       },
       "enabled": true
     },
@@ -78,7 +78,7 @@
         "module": "tcp",
         "object": "Client",
         "symbol": "init",
-        "id": 273
+        "id": 366
       },
       "enabled": true
     },
@@ -94,7 +94,7 @@
         "module": "udp",
         "object": "Client",
         "symbol": "init",
-        "id": 344
+        "id": 433
       },
       "enabled": true
     },
@@ -110,7 +110,7 @@
         "module": "graphql",
         "object": "Client",
         "symbol": "init",
-        "id": 538
+        "id": 483
       },
       "enabled": true
     },
@@ -126,7 +126,7 @@
         "module": "websocket",
         "object": "Client",
         "symbol": "init",
-        "id": 568
+        "id": 534
       },
       "enabled": true
     },
@@ -148,6 +148,38 @@
     },
     {
       "metadata": {
+        "label": "aws.marketplace.mpm",
+        "description": "AWS Marketplace metering client.",
+        "icon": "https://bcentral-packageicons.azureedge.net/images/ballerinax_aws.marketplace.mpm_0.1.0.png"
+      },
+      "codedata": {
+        "node": "NEW_CONNECTION",
+        "org": "ballerinax",
+        "module": "aws.marketplace.mpm",
+        "object": "Client",
+        "symbol": "init",
+        "id": 637
+      },
+      "enabled": true
+    },
+    {
+      "metadata": {
+        "label": "snowflake",
+        "description": "Represents a Snowflake database client.",
+        "icon": "https://bcentral-packageicons.azureedge.net/images/ballerinax_snowflake_2.0.0.png"
+      },
+      "codedata": {
+        "node": "NEW_CONNECTION",
+        "org": "ballerinax",
+        "module": "snowflake",
+        "object": "Client",
+        "symbol": "init",
+        "id": 642
+      },
+      "enabled": true
+    },
+    {
+      "metadata": {
         "label": "aws.redshift",
         "description": "",
         "icon": "https://bcentral-packageicons.azureedge.net/images/ballerinax_aws.redshift_1.1.0.png"
@@ -158,23 +190,39 @@
         "module": "aws.redshift",
         "object": "Client",
         "symbol": "init",
-        "id": 637
+        "id": 649
       },
       "enabled": true
     },
     {
       "metadata": {
-        "label": "mssql",
-        "description": "Represents an MSSQL database client.",
-        "icon": "https://bcentral-packageicons.azureedge.net/images/ballerinax_mssql_1.13.1.png"
+        "label": "oracledb",
+        "description": "Represents a OracleDB client.",
+        "icon": "https://bcentral-packageicons.azureedge.net/images/ballerinax_oracledb_1.11.1.png"
       },
       "codedata": {
         "node": "NEW_CONNECTION",
         "org": "ballerinax",
-        "module": "mssql",
+        "module": "oracledb",
         "object": "Client",
         "symbol": "init",
-        "id": 644
+        "id": 655
+      },
+      "enabled": true
+    },
+    {
+      "metadata": {
+        "label": "aws.marketplace.mpe",
+        "description": "AWS Marketplace entitlement client.",
+        "icon": "https://bcentral-packageicons.azureedge.net/images/ballerinax_aws.marketplace.mpe_0.1.0.png"
+      },
+      "codedata": {
+        "node": "NEW_CONNECTION",
+        "org": "ballerinax",
+        "module": "aws.marketplace.mpe",
+        "object": "Client",
+        "symbol": "init",
+        "id": 665
       },
       "enabled": true
     },
@@ -190,87 +238,7 @@
         "module": "mongodb",
         "object": "Client",
         "symbol": "init",
-        "id": 651
-      },
-      "enabled": true
-    },
-    {
-      "metadata": {
-        "label": "java.jdbc",
-        "description": "Represents a JDBC client.",
-        "icon": "https://bcentral-packageicons.azureedge.net/images/ballerinax_java.jdbc_1.12.1.png"
-      },
-      "codedata": {
-        "node": "NEW_CONNECTION",
-        "org": "ballerinax",
-        "module": "java.jdbc",
-        "object": "Client",
-        "symbol": "init",
-        "id": 655
-      },
-      "enabled": true
-    },
-    {
-      "metadata": {
-        "label": "postgresql",
-        "description": "Represents a PostgreSQL database client.",
-        "icon": "https://bcentral-packageicons.azureedge.net/images/ballerinax_postgresql_1.13.1.png"
-      },
-      "codedata": {
-        "node": "NEW_CONNECTION",
-        "org": "ballerinax",
-        "module": "postgresql",
-        "object": "Client",
-        "symbol": "init",
-        "id": 662
-      },
-      "enabled": true
-    },
-    {
-      "metadata": {
-        "label": "redis",
-        "description": "Ballerina Redis connector provides the capability to access Redis cache.\nThis connector lets you to perform operations to access and manipulate key-value data stored in a Redis database. \n",
-        "icon": "https://bcentral-packageicons.azureedge.net/images/ballerinax_redis_3.0.2.png"
-      },
-      "codedata": {
-        "node": "NEW_CONNECTION",
-        "org": "ballerinax",
-        "module": "redis",
-        "object": "Client",
-        "symbol": "init",
-        "id": 669
-      },
-      "enabled": true
-    },
-    {
-      "metadata": {
-        "label": "openai.audio",
-        "description": "The OpenAI REST API. Please see https://platform.openai.com/docs/api-reference for more details.",
-        "icon": "https://bcentral-packageicons.azureedge.net/images/ballerinax_openai.audio_2.0.0.png"
-      },
-      "codedata": {
-        "node": "NEW_CONNECTION",
-        "org": "ballerinax",
-        "module": "openai.audio",
-        "object": "Client",
-        "symbol": "init",
-        "id": 778
-      },
-      "enabled": true
-    },
-    {
-      "metadata": {
-        "label": "aws.dynamodb",
-        "description": "The Ballerina AWS DynamoDB connector provides the capability to access AWS Simple Email Service related operations.\nThis connector lets you to to send email messages to your customers.\n",
-        "icon": "https://bcentral-packageicons.azureedge.net/images/ballerinax_aws.dynamodb_2.3.0.png"
-      },
-      "codedata": {
-        "node": "NEW_CONNECTION",
-        "org": "ballerinax",
-        "module": "aws.dynamodb",
-        "object": "Client",
-        "symbol": "init",
-        "id": 782
+        "id": 667
       },
       "enabled": true
     },
@@ -286,39 +254,71 @@
         "module": "rabbitmq",
         "object": "Client",
         "symbol": "init",
-        "id": 800
+        "id": 672
       },
       "enabled": true
     },
     {
       "metadata": {
-        "label": "aws.sns",
-        "description": "Ballerina Amazon SNS API connector provides the capability to access Amazon's Simple Notification Service.\nThis connector allows you to create and manage SNS topics and subscriptions.\n",
-        "icon": "https://bcentral-packageicons.azureedge.net/images/ballerinax_aws.sns_3.0.0.png"
+        "label": "java.jdbc",
+        "description": "Represents a JDBC client.",
+        "icon": "https://bcentral-packageicons.azureedge.net/images/ballerinax_java.jdbc_1.12.1.png"
       },
       "codedata": {
         "node": "NEW_CONNECTION",
         "org": "ballerinax",
-        "module": "aws.sns",
+        "module": "java.jdbc",
         "object": "Client",
         "symbol": "init",
-        "id": 815
+        "id": 687
       },
       "enabled": true
     },
     {
       "metadata": {
-        "label": "nats",
-        "description": "The client provides the capability to publish messages to the NATS server.",
-        "icon": "https://bcentral-packageicons.azureedge.net/images/ballerinax_nats_3.1.0.png"
+        "label": "postgresql",
+        "description": "Represents a PostgreSQL database client.",
+        "icon": "https://bcentral-packageicons.azureedge.net/images/ballerinax_postgresql_1.13.1.png"
       },
       "codedata": {
         "node": "NEW_CONNECTION",
         "org": "ballerinax",
-        "module": "nats",
+        "module": "postgresql",
         "object": "Client",
         "symbol": "init",
-        "id": 833
+        "id": 694
+      },
+      "enabled": true
+    },
+    {
+      "metadata": {
+        "label": "confluent.cregistry",
+        "description": "Consists of APIs to integrate with Avro Schema Registry.",
+        "icon": "https://bcentral-packageicons.azureedge.net/images/ballerinax_confluent.cregistry_0.2.1.png"
+      },
+      "codedata": {
+        "node": "NEW_CONNECTION",
+        "org": "ballerinax",
+        "module": "confluent.cregistry",
+        "object": "Client",
+        "symbol": "init",
+        "id": 701
+      },
+      "enabled": true
+    },
+    {
+      "metadata": {
+        "label": "mysql",
+        "description": "Represents a MySQL database client.",
+        "icon": "https://bcentral-packageicons.azureedge.net/images/ballerinax_mysql_1.13.1.png"
+      },
+      "codedata": {
+        "node": "NEW_CONNECTION",
+        "org": "ballerinax",
+        "module": "mysql",
+        "object": "Client",
+        "symbol": "init",
+        "id": 705
       },
       "enabled": true
     }

@@ -311,6 +311,10 @@
       "version": "2.4.0"
     },
     {
+      "name": "googleapis.sheets",
+      "version": "3.5.1"
+    },
+    {
       "name": "aws.dynamodb",
       "version": "2.3.0"
     },
