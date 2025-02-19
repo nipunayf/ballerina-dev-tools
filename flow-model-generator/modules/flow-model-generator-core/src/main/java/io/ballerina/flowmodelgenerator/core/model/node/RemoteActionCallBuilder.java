@@ -21,17 +21,11 @@ package io.ballerina.flowmodelgenerator.core.model.node;
 import io.ballerina.compiler.syntax.tree.SyntaxKind;
 import io.ballerina.flowmodelgenerator.core.db.DatabaseManager;
 import io.ballerina.flowmodelgenerator.core.db.model.FunctionResult;
-import io.ballerina.flowmodelgenerator.core.db.model.Parameter;
-import io.ballerina.flowmodelgenerator.core.db.model.ParameterResult;
 import io.ballerina.flowmodelgenerator.core.model.Codedata;
 import io.ballerina.flowmodelgenerator.core.model.FlowNode;
-import io.ballerina.flowmodelgenerator.core.model.FormBuilder;
-import io.ballerina.flowmodelgenerator.core.model.NodeBuilder;
 import io.ballerina.flowmodelgenerator.core.model.NodeKind;
 import io.ballerina.flowmodelgenerator.core.model.Property;
 import io.ballerina.flowmodelgenerator.core.model.SourceBuilder;
-import io.ballerina.flowmodelgenerator.core.utils.FlowNodeUtil;
-import io.ballerina.flowmodelgenerator.core.utils.ParamUtils;
 import io.ballerina.modelgenerator.commons.CommonUtils;
 import org.eclipse.lsp4j.TextEdit;
 
@@ -46,7 +40,7 @@ import java.util.Set;
  *
  * @since 2.0.0
  */
-public class RemoteActionCallBuilder extends NodeBuilder {
+public class RemoteActionCallBuilder extends FunctionBuilder {
 
     public static final String TARGET_TYPE_KEY = "targetType";
 
@@ -60,9 +54,7 @@ public class RemoteActionCallBuilder extends NodeBuilder {
         sourceBuilder.newVariable();
         FlowNode flowNode = sourceBuilder.flowNode;
 
-        if (FlowNodeUtil.hasCheckKeyFlagSet(flowNode)) {
-            sourceBuilder.token().keyword(SyntaxKind.CHECK_KEYWORD);
-        }
+        addCheckKeywordIfNeeded(sourceBuilder, flowNode);
 
         Optional<Property> connection = flowNode.getProperty(Property.CONNECTION_KEY);
         if (connection.isEmpty()) {
@@ -82,7 +74,13 @@ public class RemoteActionCallBuilder extends NodeBuilder {
                 .build();
     }
 
-    private static FlowNode fetchNodeTemplate(NodeBuilder nodeBuilder, Codedata codedata, TemplateContext context) {
+    @Override
+    public void setConcreteTemplateData(TemplateContext context) {
+        Codedata codedata = context.codedata();
+        this.cachedFlowNode = fetchNodeTemplate(codedata, context);
+    }
+
+    private static FlowNode fetchNodeTemplate(Codedata codedata, TemplateContext context) {
         if (codedata.org().equals("$anon")) {
             return null;
         }
@@ -95,8 +93,9 @@ public class RemoteActionCallBuilder extends NodeBuilder {
             return null;
         }
 
+        RemoteActionCallBuilder builder = new RemoteActionCallBuilder();
         FunctionResult function = functionResult.get();
-        nodeBuilder
+        builder
                 .metadata()
                 .label(function.name())
                 .description(function.description())
@@ -109,7 +108,7 @@ public class RemoteActionCallBuilder extends NodeBuilder {
                 .id(function.functionId())
                 .symbol(function.name());
 
-        nodeBuilder.properties().custom()
+        builder.properties().custom()
                 .metadata()
                 .label(Property.CONNECTION_LABEL)
                 .description(Property.CONNECTION_DOC)
@@ -120,66 +119,16 @@ public class RemoteActionCallBuilder extends NodeBuilder {
                 .stepOut()
                 .addProperty(Property.CONNECTION_KEY);
 
-        List<ParameterResult> functionParameters = dbManager.getFunctionParameters(function.functionId());
-        boolean hasOnlyRestParams = functionParameters.size() == 1;
-        for (ParameterResult paramResult : functionParameters) {
-            if (paramResult.kind().equals(Parameter.Kind.PARAM_FOR_TYPE_INFER)
-                    || paramResult.kind().equals(Parameter.Kind.INCLUDED_RECORD)) {
-                continue;
-            }
-
-            String unescapedParamName = ParamUtils.removeLeadingSingleQuote(paramResult.name());
-            Property.Builder<FormBuilder<NodeBuilder>> customPropBuilder = nodeBuilder.properties().custom();
-            customPropBuilder
-                    .metadata()
-                        .label(unescapedParamName)
-                        .description(paramResult.description())
-                        .stepOut()
-                    .codedata()
-                        .kind(paramResult.kind().name())
-                        .originalName(paramResult.name())
-                        .importStatements(paramResult.importStatements())
-                        .stepOut()
-                    .placeholder(paramResult.defaultValue())
-                    .typeConstraint(paramResult.type())
-                    .editable()
-                    .defaultable(paramResult.optional());
-
-            if (paramResult.kind() == Parameter.Kind.INCLUDED_RECORD_REST) {
-                if (hasOnlyRestParams) {
-                    customPropBuilder.defaultable(false);
-                }
-                unescapedParamName = "additionalValues";
-                customPropBuilder.type(Property.ValueType.MAPPING_EXPRESSION_SET);
-            } else if (paramResult.kind() == Parameter.Kind.REST_PARAMETER) {
-                if (hasOnlyRestParams) {
-                    customPropBuilder.defaultable(false);
-                }
-                customPropBuilder.type(Property.ValueType.EXPRESSION_SET);
-            } else {
-                customPropBuilder.type(Property.ValueType.EXPRESSION);
-            }
-            customPropBuilder
-                    .stepOut()
-                    .addProperty(unescapedParamName);
-        }
+        builder.setCustomProperties(dbManager.getFunctionParameters(function.functionId()));
 
         String returnTypeName = function.returnType();
         if (CommonUtils.hasReturn(returnTypeName)) {
-            nodeBuilder.properties()
-                    .type(returnTypeName, function.inferredReturnType())
-                    .data(function.returnType(), context.getAllVisibleSymbolNames(), Property.VARIABLE_NAME);
+            builder.setReturnTypeProperties(returnTypeName, context, true);
         }
 
         if (function.returnError()) {
-            nodeBuilder.properties().checkError(true);
+            builder.properties().checkError(true);
         }
-        return nodeBuilder.build();
-    }
-
-    @Override
-    public void setConcreteTemplateData(TemplateContext context) {
-        Codedata codedata = context.codedata();
-        this.cachedFlowNode = fetchNodeTemplate(this, codedata, context);
+        return builder.build();
     }
 }

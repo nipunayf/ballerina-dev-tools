@@ -21,15 +21,10 @@ package io.ballerina.flowmodelgenerator.core.model.node;
 import io.ballerina.compiler.syntax.tree.SyntaxKind;
 import io.ballerina.flowmodelgenerator.core.db.DatabaseManager;
 import io.ballerina.flowmodelgenerator.core.db.model.FunctionResult;
-import io.ballerina.flowmodelgenerator.core.db.model.Parameter;
-import io.ballerina.flowmodelgenerator.core.db.model.ParameterResult;
 import io.ballerina.flowmodelgenerator.core.model.Codedata;
 import io.ballerina.flowmodelgenerator.core.model.FlowNode;
-import io.ballerina.flowmodelgenerator.core.model.FormBuilder;
-import io.ballerina.flowmodelgenerator.core.model.NodeBuilder;
 import io.ballerina.flowmodelgenerator.core.model.NodeKind;
 import io.ballerina.flowmodelgenerator.core.model.Property;
-import io.ballerina.flowmodelgenerator.core.model.PropertyCodedata;
 import io.ballerina.flowmodelgenerator.core.model.SourceBuilder;
 import io.ballerina.flowmodelgenerator.core.utils.FlowNodeUtil;
 import io.ballerina.flowmodelgenerator.core.utils.ParamUtils;
@@ -49,7 +44,7 @@ import java.util.Set;
  *
  * @since 2.0.0
  */
-public class ResourceActionCallBuilder extends NodeBuilder {
+public class ResourceActionCallBuilder extends FunctionBuilder {
 
     public static final String TARGET_TYPE_KEY = "targetType";
 
@@ -63,9 +58,7 @@ public class ResourceActionCallBuilder extends NodeBuilder {
         sourceBuilder.newVariable();
         FlowNode flowNode = sourceBuilder.flowNode;
 
-        if (FlowNodeUtil.hasCheckKeyFlagSet(flowNode)) {
-            sourceBuilder.token().keyword(SyntaxKind.CHECK_KEYWORD);
-        }
+        addCheckKeywordIfNeeded(sourceBuilder, flowNode);
 
         Optional<Property> connection = flowNode.getProperty(Property.CONNECTION_KEY);
         if (connection.isEmpty()) {
@@ -90,7 +83,7 @@ public class ResourceActionCallBuilder extends NodeBuilder {
             if (property.isEmpty()) {
                 continue;
             }
-            PropertyCodedata propCodedata = property.get().codedata();
+            Property.PropertyCodedata propCodedata = property.get().codedata();
             if (propCodedata == null) {
                 continue;
             }
@@ -106,7 +99,6 @@ public class ResourceActionCallBuilder extends NodeBuilder {
             }
         }
 
-
         return sourceBuilder.token()
                 .name(connection.get().toSourceCode())
                 .keyword(SyntaxKind.RIGHT_ARROW_TOKEN)
@@ -120,6 +112,7 @@ public class ResourceActionCallBuilder extends NodeBuilder {
                 .build();
     }
 
+    @Override
     public void setConcreteTemplateData(TemplateContext context) {
         Codedata codedata = context.codedata();
         if (codedata.org().equals("$anon")) {
@@ -160,55 +153,11 @@ public class ResourceActionCallBuilder extends NodeBuilder {
         String resourcePath = function.resourcePath();
         properties().resourcePath(resourcePath, resourcePath.equals(ParamUtils.REST_RESOURCE_PATH));
 
-        List<ParameterResult> functionParameters = dbManager.getFunctionParameters(function.functionId());
-        boolean hasOnlyRestParams = functionParameters.size() == 1;
-        for (ParameterResult paramResult : functionParameters) {
-            if (paramResult.kind().equals(Parameter.Kind.PARAM_FOR_TYPE_INFER)
-                    || paramResult.kind().equals(Parameter.Kind.INCLUDED_RECORD)) {
-                continue;
-            }
-
-            String unescapedParamName = ParamUtils.removeLeadingSingleQuote(paramResult.name());
-            Property.Builder<FormBuilder<NodeBuilder>> customPropBuilder = properties().custom();
-            customPropBuilder
-                    .metadata()
-                        .label(unescapedParamName)
-                        .description(paramResult.description())
-                        .stepOut()
-                    .codedata()
-                        .kind(paramResult.kind().name())
-                        .originalName(paramResult.name())
-                        .importStatements(paramResult.importStatements())
-                        .stepOut()
-                    .placeholder(paramResult.defaultValue())
-                    .typeConstraint(paramResult.type())
-                    .editable()
-                    .defaultable(paramResult.optional());
-
-            if (paramResult.kind() == Parameter.Kind.INCLUDED_RECORD_REST) {
-                if (hasOnlyRestParams) {
-                    customPropBuilder.defaultable(false);
-                }
-                unescapedParamName = "additionalValues";
-                customPropBuilder.type(Property.ValueType.MAPPING_EXPRESSION_SET);
-            } else if (paramResult.kind() == Parameter.Kind.REST_PARAMETER) {
-                if (hasOnlyRestParams) {
-                    customPropBuilder.defaultable(false);
-                }
-                customPropBuilder.type(Property.ValueType.EXPRESSION_SET);
-            } else {
-                customPropBuilder.type(Property.ValueType.EXPRESSION);
-            }
-            customPropBuilder
-                    .stepOut()
-                    .addProperty(unescapedParamName);
-        }
+        setCustomProperties(dbManager.getFunctionParameters(function.functionId()));
 
         String returnTypeName = function.returnType();
         if (CommonUtils.hasReturn(function.returnType())) {
-            properties()
-                    .type(returnTypeName, function.inferredReturnType())
-                    .data(function.returnType(), context.getAllVisibleSymbolNames(), Property.VARIABLE_NAME);
+            setReturnTypeProperties(returnTypeName, context, true);
         }
 
         if (function.returnError()) {
