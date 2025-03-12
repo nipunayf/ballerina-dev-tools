@@ -55,8 +55,34 @@
             "symbol": "prefixSum"
           },
           "enabled": true
+        },
+        {
+          "metadata": {
+            "label": "sum2",
+            "data": {
+              "isAgentTool": false,
+              "isDataMappedFunction": false
+            }
+          },
+          "codedata": {
+            "node": "FUNCTION_CALL",
+            "symbol": "sum2"
+          },
+          "enabled": true
         }
       ]
+    },
+    {
+      "metadata": {
+        "label": "Data Mappings",
+        "description": "Data mappings used in the integration",
+        "keywords": [
+          "Data",
+          "Mapping",
+          "Transformation"
+        ]
+      },
+      "items": []
     },
     {
       "metadata": {

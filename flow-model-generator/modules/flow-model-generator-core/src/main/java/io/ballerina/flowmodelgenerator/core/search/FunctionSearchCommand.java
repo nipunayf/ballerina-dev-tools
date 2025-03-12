@@ -128,10 +128,12 @@ class FunctionSearchCommand extends SearchCommand {
                 getSemanticModel().moduleSymbols().stream()
                 .filter(symbol -> symbol.kind().equals(SymbolKind.FUNCTION) && !symbol.nameEquals("main")).toList();
         Category.Builder projectBuilder = rootBuilder.stepIn(Category.Name.CURRENT_INTEGRATION);
+        Category.Builder dataMappingsBuilder = rootBuilder.stepIn(Category.Name.DATA_MAPPINGS);
         Category.Builder agentToolsBuilder = rootBuilder.stepIn(Category.Name.AGENT_TOOLS);
 
         List<Item> availableNodes = new ArrayList<>();
         List<Item> availableTools = new ArrayList<>();
+        List<Item> availableDataMappedFunctions = new ArrayList<>();
         for (Symbol symbol : functionSymbols) {
             FunctionSymbol functionSymbol = (FunctionSymbol) symbol;
             boolean isDataMappedFunction = false;
@@ -172,7 +174,9 @@ class FunctionSearchCommand extends SearchCommand {
                 id.moduleName();
             }
 
-            if (isAgentTool) {
+            if (isDataMappedFunction) {
+                availableDataMappedFunctions.add(new AvailableNode(metadata, codedata.build(), true));
+            } else if (isAgentTool) {
                 availableTools.add(new AvailableNode(metadata, codedata.build(), true));
             } else {
                 availableNodes.add(new AvailableNode(metadata, codedata.build(), true));
@@ -180,6 +184,7 @@ class FunctionSearchCommand extends SearchCommand {
         }
         projectBuilder.items(availableNodes);
         agentToolsBuilder.items(availableTools);
+        dataMappingsBuilder.items(availableDataMappedFunctions);
     }
 
     private void buildLibraryNodes(List<SearchResult> functionSearchList) {

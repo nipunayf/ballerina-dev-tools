@@ -1,7 +1,7 @@
 {
   "description": "Sample flow model",
   "kind": "FUNCTION",
-  "source": "proj/fn.bal",
+  "source": "proj/main.bal",
   "position": {
     "startLine": {
       "line": 15,
@@ -39,6 +39,20 @@
           "codedata": {
             "node": "FUNCTION_CALL",
             "symbol": "add"
+          },
+          "enabled": true
+        },
+        {
+          "metadata": {
+            "label": "sum",
+            "data": {
+              "isAgentTool": false,
+              "isDataMappedFunction": false
+            }
+          },
+          "codedata": {
+            "node": "FUNCTION_CALL",
+            "symbol": "sum"
           },
           "enabled": true
         },
@@ -83,20 +97,6 @@
           "codedata": {
             "node": "FUNCTION_CALL",
             "symbol": "greet"
-          },
-          "enabled": true
-        },
-        {
-          "metadata": {
-            "label": "sum2",
-            "data": {
-              "isAgentTool": false,
-              "isDataMappedFunction": false
-            }
-          },
-          "codedata": {
-            "node": "FUNCTION_CALL",
-            "symbol": "sum2"
           },
           "enabled": true
         }

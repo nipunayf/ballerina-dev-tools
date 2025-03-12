@@ -9,3 +9,4 @@ function transform(Person person, Admission admission) returns Employee => {
     }
 };
 
+o
