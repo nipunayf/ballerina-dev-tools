@@ -30,7 +30,7 @@ jobs:
           version: 2201.12.2
 
       - name: List Ballerina repositories
-        run: ls -la ~/runner/
+        run: ls -la ~/
 
       - name: Cache Ballerina dependencies
         uses: actions/cache@v4
