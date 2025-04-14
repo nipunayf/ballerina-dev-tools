@@ -1,6 +1,6 @@
 name: PR build
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   ubuntu-build:
@@ -32,10 +32,10 @@ jobs:
           version: 2201.12.2
 
       - name: Cache Ballerina dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         id: cache-ballerina
         with:
-          path: ~/.ballerina/repositories
+          path: /home/runner/.ballerina/repositories/
           key: ${{ runner.os }}-ballerina-${{ hashFiles('**/gradle.properties') }}
           restore-keys: |
             ${{ runner.os }}-ballerina-
