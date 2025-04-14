@@ -31,6 +31,15 @@ jobs:
         with:
           version: 2201.12.2
 
+      - name: Cache Ballerina dependencies
+        uses: actions/cache@v3
+        id: cache-ballerina
+        with:
+          path: ~/.ballerina/.repositories
+          key: ${{ runner.os }}-ballerina-${{ hashFiles('**/gradle.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-ballerina-
+
       - name: Build with Gradle
         env:
           packageUser: ${{ github.actor }}
