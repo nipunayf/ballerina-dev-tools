@@ -29,12 +29,9 @@ jobs:
         with:
           version: 2201.12.2
 
-      - name: List Ballerina repositories
-        run: ls -la ~/
-
-      - name: Cache Ballerina dependencies
-        uses: actions/cache@v4
-        id: cache-ballerina
+      - name: Restore Ballerina dependencies cache
+        uses: actions/cache/restore@v4
+        id: cache-ballerina-restore
         with:
           path: /home/runner/.ballerina/repositories/
           key: ${{ runner.os }}-ballerina-${{ hashFiles('**/gradle.properties') }}
@@ -47,8 +44,12 @@ jobs:
           packagePAT: ${{ secrets.GITHUB_TOKEN }}
         run: ./gradlew build -x :createArtifactZip
 
-      - name: List Ballerina repositories
-        run: ls -la ~/
+      - name: Save Ballerina dependencies cache
+        uses: actions/cache/save@v4
+        if: always()  # Try to save cache even if build fails
+        with:
+          path: /home/runner/.ballerina/repositories/
+          key: ${{ steps.cache-ballerina-restore.outputs.cache-primary-key }}
 
 #      - name: Generate Codecov Report
 #        if: github.event_name == 'pull_request'
