@@ -47,9 +47,12 @@ jobs:
           packagePAT: ${{ secrets.GITHUB_TOKEN }}
         run: ./gradlew build -x :createArtifactZip
 
-      - name: Generate Codecov Report
-        if: github.event_name == 'pull_request'
-        uses: codecov/codecov-action@v1
+      - name: List Ballerina repositories
+        run: ls -la ~/
+
+#      - name: Generate Codecov Report
+#        if: github.event_name == 'pull_request'
+#        uses: codecov/codecov-action@v1
         
 
   # windows-build:
