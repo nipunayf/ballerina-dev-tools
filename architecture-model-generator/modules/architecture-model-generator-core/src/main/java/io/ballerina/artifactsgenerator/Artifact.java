@@ -49,7 +49,7 @@ import java.util.Optional;
 public record Artifact(String id, LineRange location, String type, String name, String accessor,
                        String scope, String icon, String module, Map<String, Artifact> children) {
 
-    private static final String CATEGORY_ENTRY_POINTS = "Entry Points";
+    private static final String CATEGORY_ENTRY_POINTS = "Entries";
     private static final String CATEGORY_RESOURCES = "Resources";
     private static final String CATEGORY_REMOTE_METHODS = "Remote Methods";
     private static final String CATEGORY_FUNCTIONS = "Functions";
