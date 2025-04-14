@@ -1,6 +1,6 @@
 {
-  "source": "functions.bal",
   "description": "",
+  "source": "functions.bal",
   "output": {
     "Functions": {
       "add": {
@@ -148,7 +148,7 @@
         "children": {}
       }
     },
-    "Entry Points": {
+    "Entries": {
       "automation": {
         "id": "automation",
         "location": {

@@ -1,6 +1,6 @@
 {
-  "source": "data_mapper.bal",
   "description": "",
+  "source": "data_mapper.bal",
   "output": {
     "Types": {
       "CustomerSummary": {
@@ -77,24 +77,6 @@
       }
     },
     "Data Mappers": {
-      "doubleAllValues": {
-        "id": "doubleAllValues",
-        "location": {
-          "fileName": "data_mapper.bal",
-          "startLine": {
-            "line": 61,
-            "offset": 0
-          },
-          "endLine": {
-            "line": 63,
-            "offset": 19
-          }
-        },
-        "type": "DATA_MAPPER",
-        "name": "doubleAllValues",
-        "scope": "Global",
-        "children": {}
-      },
       "fahrenheitToCelsius": {
         "id": "fahrenheitToCelsius",
         "location": {
@@ -110,6 +92,24 @@
         },
         "type": "DATA_MAPPER",
         "name": "fahrenheitToCelsius",
+        "scope": "Global",
+        "children": {}
+      },
+      "doubleAllValues": {
+        "id": "doubleAllValues",
+        "location": {
+          "fileName": "data_mapper.bal",
+          "startLine": {
+            "line": 61,
+            "offset": 0
+          },
+          "endLine": {
+            "line": 63,
+            "offset": 19
+          }
+        },
+        "type": "DATA_MAPPER",
+        "name": "doubleAllValues",
         "scope": "Global",
         "children": {}
       },
@@ -240,7 +240,7 @@
         "children": {}
       }
     },
-    "Entry Points": {
+    "Entries": {
       "automation": {
         "id": "automation",
         "location": {
