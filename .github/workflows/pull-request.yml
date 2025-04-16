@@ -73,7 +73,7 @@ jobs:
         uses: actions/cache@v4
         id: cache-ballerina
         with:
-          path: /home/runner/.ballerina/repositories/
+          path: C:\Users\runneradmin\.ballerina\repositories\
           key: ${{ runner.os }}-ballerina-${{ hashFiles('**/gradle.properties') }}
           restore-keys: |
             ${{ runner.os }}-ballerina-
