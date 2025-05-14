@@ -1,0 +1,12 @@
+{
+  "position": {
+    "line": 1,
+    "character": 1
+  },
+  "source": "make_variable_immutable_negative1.bal",
+  "expected": [
+    {
+      "title": "Add %s to the variable"
+    }
+  ]
+}
