@@ -344,17 +344,37 @@ task buildCommons {
     dependsOn(":model-generator-commons:build")
 }
 
+// Configuration for combineAllJars task
+configurations {
+    combineAllJarsDeps
+}
+
+dependencies {
+    combineAllJarsDeps "org.eclipse.lsp4j:org.eclipse.lsp4j:${eclipseLsp4jVersion}"
+}
+
 task combineAllJars(type: com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar) {
     description 'Creates a single JAR containing all submodules'
     group 'build'
     
-    // Depend on each subproject's build task
-    dependsOn subprojects.collect { it.path + ':build' }
+    // Depend on each subproject's build task (with -x check)
+    def subprojectBuilds = []
+    subprojects.each { subproject ->
+        subprojectBuilds << tasks.create(name: "build${subproject.name.capitalize()}ForCombine", dependsOn: [
+            tasks.getByPath("${subproject.path}:compileJava"),
+            tasks.getByPath("${subproject.path}:processResources"),
+            tasks.getByPath("${subproject.path}:jar")
+        ])
+    }
+    dependsOn subprojectBuilds
     
     archiveBaseName = 'ballerina-language-server'
     archiveClassifier = ''
     archiveVersion = project.version
     destinationDirectory = file("$project.buildDir")
+    
+    // Include eclipse lsp4j dependency - need to configure this correctly for ShadowJar
+    configurations = [project.configurations.combineAllJarsDeps]
     
     // Include the compiled classes and resources from all submodules
     subprojects.each { subproject ->
