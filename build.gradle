@@ -201,6 +201,7 @@ def pullBallerinaModule(String packageName, String version = null, String orgNam
 
 task copyArtifactZip {
     dependsOn(":model-generator-commons:build")
+    dependsOn(":launcher:build")
     dependsOn(":architecture-model-generator:architecture-model-generator-core:build")
     dependsOn(":architecture-model-generator:architecture-model-generator-plugin:build")
     dependsOn(":architecture-model-generator:architecture-model-generator-ls-extension:build")
@@ -308,6 +309,7 @@ test.dependsOn rootProject.pullBallerinaModule('trigger.github', ballerinaxGithu
 task build {
     dependsOn test
     dependsOn createArtifactZip
+    dependsOn(':launcher:build')
 }
 
 task clean {
@@ -340,6 +342,49 @@ task buildTestService {
 
 task buildCommons {
     dependsOn(":model-generator-commons:build")
+}
+
+task combineAllJars(type: com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar) {
+    description 'Creates a single JAR containing all submodules'
+    group 'build'
+    
+    // Depend on each subproject's build task
+    dependsOn subprojects.collect { it.path + ':build' }
+    
+    archiveBaseName = 'ballerina-language-server'
+    archiveClassifier = ''
+    archiveVersion = project.version
+    destinationDirectory = file("$project.buildDir")
+    
+    // Include the compiled classes and resources from all submodules
+    subprojects.each { subproject ->
+        if (subproject.tasks.findByName('jar')) {
+            from subproject.tasks.jar.outputs
+        }
+    }
+    
+    // Set the main class for the executable JAR
+    manifest {
+        attributes(
+            'Main-Class': 'org.ballerinalang.langserver.launchers.stdio.Main',
+            'Implementation-Title': 'Ballerina Language Server',
+            'Implementation-Version': project.version
+        )
+    }
+    
+    // Manage dependencies to avoid duplicates
+    mergeServiceFiles()
+    exclude 'META-INF/*.SF'
+    exclude 'META-INF/*.DSA'
+    exclude 'META-INF/*.RSA'
+    
+    // Create a manifest with the main class if needed
+    manifest {
+        attributes(
+            'Implementation-Title': 'Ballerina Dev Tools Combined',
+            'Implementation-Version': project.version
+        )
+    }
 }
 
 build.doNotTrackState("build needs to run every time")
