@@ -60,6 +60,8 @@ dependencies {
     testImplementation "org.awaitility:awaitility:${awaitilityVersion}"
 }
 
+def balDistribution = file("/Library/Ballerina/distributions/ballerina-2201.12.3")
+
 ext.moduleName = 'io.ballerina.language-server-commons.extension'
 jar {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
@@ -69,7 +71,23 @@ jar {
     }
 }
 
+
+tasks.register('copyRuntime') {
+    dependsOn configurations.dist
+    doFirst {
+        configurations.dist.each { artifact ->
+            copy {
+                from artifact.getPath()
+                into "$buildDir/bre/lib"
+            }
+        }
+    }
+}
+
 test {
+    dependsOn copyRuntime
+    systemProperty "ballerina.home", balDistribution
+
     useTestNG() {
         suites "src/test/resources/testng.xml"
     }
