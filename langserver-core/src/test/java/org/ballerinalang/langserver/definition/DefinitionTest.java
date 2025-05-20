@@ -210,13 +210,28 @@ public class DefinitionTest {
         for (JsonElement jsonElement : expected) {
             JsonObject item = jsonElement.getAsJsonObject();
             String[] uriComponents = item.get("uri").toString().replace("\"", "").split("/");
-            Path expectedPath = Path.of("build").toAbsolutePath();
-            for (String uriComponent : uriComponents) {
-                expectedPath = expectedPath.resolve(uriComponent);
-            }
+
+            Path expectedPath = getPath(uriComponents);
             item.remove("uri");
             item.addProperty("uri", expectedPath.toFile().getCanonicalPath());
         }
+    }
+
+    private static Path getPath(String[] uriComponents) {
+        int startIndex = 0;
+        for (int i = 0; i < uriComponents.length; i++) {
+            if (uriComponents[i].equals("repo")) {
+                startIndex = i;
+                break;
+            }
+        }
+        Path expectedPath = Path.of("/");
+        for (int i = startIndex; i < uriComponents.length; i++) {
+            if (!uriComponents[i].isEmpty()) {
+                expectedPath = expectedPath.resolve(uriComponents[i]);
+            }
+        }
+        return expectedPath;
     }
 
     protected void alterActualStdLibUri(JsonArray actual) throws IOException, URISyntaxException {
@@ -234,6 +249,9 @@ public class DefinitionTest {
                     "Expected file URI scheme after conversion");
 
             String canonicalPath = new File(URI.create(fileUri)).getCanonicalPath();
+            if (canonicalPath.contains("repo")) {
+                canonicalPath = "/repo" + canonicalPath.substring(canonicalPath.indexOf("repo") + 4);
+            }
             item.remove("uri");
             item.addProperty("uri", canonicalPath);
         }
