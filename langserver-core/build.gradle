@@ -60,8 +60,6 @@ dependencies {
     testImplementation "org.awaitility:awaitility:${awaitilityVersion}"
 }
 
-def balDistribution = file("/Library/Ballerina/distributions/ballerina-2201.12.3")
-
 ext.moduleName = 'io.ballerina.language-server-commons.extension'
 jar {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
@@ -70,7 +68,6 @@ jar {
         exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
     }
 }
-
 
 tasks.register('copyRuntime') {
     dependsOn configurations.dist
@@ -86,7 +83,19 @@ tasks.register('copyRuntime') {
 
 test {
     dependsOn copyRuntime
-    systemProperty "ballerina.home", balDistribution
+    doFirst {
+        def balHome = ""
+        try {
+            balHome = "bal home".execute().text.trim()
+            if (balHome.isEmpty()) {
+                throw new GradleException("'bal home' command returned empty output")
+            }
+            println "Using Ballerina home: ${balHome}"
+        } catch (Exception e) {
+            throw new GradleException("Failed to determine Ballerina home. Make sure 'bal' is installed and available in PATH.", e)
+        }
+        systemProperty "ballerina.home", balHome
+    }
 
     useTestNG() {
         suites "src/test/resources/testng.xml"
