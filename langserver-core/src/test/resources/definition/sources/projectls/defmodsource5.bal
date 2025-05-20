@@ -1,5 +1,5 @@
-import ballerina/module1;
+import ballerina/http;
 
 public function main() {
-    int _ = module1:GLOBAL_VAR;
+    string _ = http:HTTP_GET;
 }

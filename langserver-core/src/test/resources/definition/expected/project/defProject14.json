@@ -10,15 +10,15 @@
     {
       "range": {
         "start": {
-          "line": 0,
+          "line": 54,
           "character": 0
         },
         "end": {
-          "line": 0,
-          "character": 28
+          "line": 54,
+          "character": 30
         }
       },
-      "uri": "repo/bala/ballerina/module1/0.1.0/any/modules/module1/variables.bal"
+      "uri": "/repositories/central.ballerina.io/bala/ballerina/http/java21/modules/http/http_constants.bal"
     }
   ]
 }
