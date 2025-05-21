@@ -77,22 +77,20 @@ public class SymbolDocumentationTest {
 
         Position functionPos = new Position();
         functionPos.setLine(17);
-        functionPos.setCharacter(20);
+        functionPos.setCharacter(10);
         SymbolInfoResponse symbolInfoResponse = LSExtensionTestUtil.getSymbolDocumentation(
                 inputFile.toString(), functionPos, this.serviceEndpoint);
 
         Assert.assertNotEquals(symbolInfoResponse.getDocumentation(), null);
-        Assert.assertEquals(symbolInfoResponse.getDocumentation().getDescription(),
-                "This is function3 with input parameters\n");
-        Assert.assertEquals(symbolInfoResponse.getDocumentation().getParameters().get(0).getName(), "param1");
+        Assert.assertTrue(symbolInfoResponse.getDocumentation().getDescription().startsWith("Print"));
+        Assert.assertEquals(symbolInfoResponse.getDocumentation().getParameters().get(0).getName(), "values");
         Assert.assertEquals(symbolInfoResponse.getDocumentation().getParameters().get(0).getDescription(),
-                "param1 Parameter Description ");
-        Assert.assertEquals(symbolInfoResponse.getDocumentation().getParameters().get(0).getKind(), "REQUIRED");
-        Assert.assertEquals(symbolInfoResponse.getDocumentation().getParameters().get(0).getType(), "int");
-        Assert.assertEquals(symbolInfoResponse.getDocumentation().getReturnValueDescription(),
-                "Return Value Description");
-        Assert.assertEquals(symbolInfoResponse.getDocumentation().getDeprecatedParams(), null);
-        Assert.assertEquals(symbolInfoResponse.getDocumentation().getDeprecatedDocumentation(), null);
+                "The value(s) to be printed");
+        Assert.assertEquals(symbolInfoResponse.getDocumentation().getParameters().get(0).getKind(), "REST");
+        Assert.assertEquals(symbolInfoResponse.getDocumentation().getParameters().get(0).getType(), "io:Printable[]");
+        Assert.assertNull(symbolInfoResponse.getDocumentation().getReturnValueDescription());
+        Assert.assertNull(symbolInfoResponse.getDocumentation().getDeprecatedParams());
+        Assert.assertNull(symbolInfoResponse.getDocumentation().getDeprecatedDocumentation());
 
         TestUtil.closeDocument(this.serviceEndpoint, inputFile);
 
@@ -105,11 +103,11 @@ public class SymbolDocumentationTest {
 
         Position functionPos = new Position();
         functionPos.setLine(18);
-        functionPos.setCharacter(20);
+        functionPos.setCharacter(11);
         SymbolInfoResponse symbolInfoResponse = LSExtensionTestUtil.getSymbolDocumentation(
                 inputFile.toString(), functionPos, this.serviceEndpoint);
 
-        Assert.assertEquals(symbolInfoResponse.getDocumentation().getDescription(), null);
+        Assert.assertNotNull(symbolInfoResponse.getDocumentation().getDescription());
         Assert.assertEquals(symbolInfoResponse.getSymbolKind(), SymbolKind.FUNCTION);
         TestUtil.closeDocument(this.serviceEndpoint, inputFile);
     }

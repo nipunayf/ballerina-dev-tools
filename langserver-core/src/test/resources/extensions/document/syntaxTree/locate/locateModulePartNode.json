@@ -14,14 +14,14 @@
             "endLine": 0,
             "endColumn": 6
           },
-          "leadingMinutiae": [],
           "trailingMinutiae": [
             {
               "kind": "WHITESPACE_MINUTIAE",
               "minutiae": " ",
               "isInvalid": false
             }
-          ]
+          ],
+          "leadingMinutiae": []
         },
         "orgName": {
           "kind": "ImportOrgName",
@@ -36,8 +36,8 @@
               "endLine": 0,
               "endColumn": 16
             },
-            "leadingMinutiae": [],
-            "trailingMinutiae": []
+            "trailingMinutiae": [],
+            "leadingMinutiae": []
           },
           "slashToken": {
             "kind": "SlashToken",
@@ -50,13 +50,13 @@
               "endLine": 0,
               "endColumn": 17
             },
-            "leadingMinutiae": [],
-            "trailingMinutiae": []
+            "trailingMinutiae": [],
+            "leadingMinutiae": []
           },
           "source": "ballerina/",
           "syntaxDiagnostics": [],
-          "leadingMinutiae": [],
           "trailingMinutiae": [],
+          "leadingMinutiae": [],
           "position": {
             "startLine": 0,
             "startColumn": 7,
@@ -71,16 +71,16 @@
           {
             "kind": "IdentifierToken",
             "isToken": true,
-            "value": "module1",
+            "value": "log",
             "isMissing": false,
             "position": {
               "startLine": 0,
               "startColumn": 17,
               "endLine": 0,
-              "endColumn": 24
+              "endColumn": 20
             },
-            "leadingMinutiae": [],
-            "trailingMinutiae": []
+            "trailingMinutiae": [],
+            "leadingMinutiae": []
           }
         ],
         "semicolon": {
@@ -90,22 +90,21 @@
           "isMissing": false,
           "position": {
             "startLine": 0,
-            "startColumn": 24,
+            "startColumn": 20,
             "endLine": 0,
-            "endColumn": 25
+            "endColumn": 21
           },
-          "leadingMinutiae": [],
           "trailingMinutiae": [
             {
               "kind": "END_OF_LINE_MINUTIAE",
               "minutiae": "\n",
               "isInvalid": false
             }
-          ]
+          ],
+          "leadingMinutiae": []
         },
-        "source": "import ballerina/module1;\n",
+        "source": "import ballerina/log;\n",
         "syntaxDiagnostics": [],
-        "leadingMinutiae": [],
         "trailingMinutiae": [
           {
             "kind": "END_OF_LINE_MINUTIAE",
@@ -113,26 +112,27 @@
             "isInvalid": false
           }
         ],
+        "leadingMinutiae": [],
         "position": {
           "startLine": 0,
           "startColumn": 0,
           "endLine": 0,
-          "endColumn": 25
+          "endColumn": 21
         },
         "typeData": {
           "symbol": {
             "moduleID": {
               "orgName": "ballerina",
-              "packageName": "module1",
-              "moduleName": "module1",
-              "version": "0.1.0"
+              "packageName": "log",
+              "moduleName": "log",
+              "version": "2.12.0"
             },
             "kind": "MODULE",
             "id": {
               "orgName": "ballerina",
-              "packageName": "module1",
-              "moduleName": "module1",
-              "version": "0.1.0"
+              "packageName": "log",
+              "moduleName": "log",
+              "version": "2.12.0"
             }
           },
           "diagnostics": []
@@ -154,17 +154,17 @@
               "endLine": 2,
               "endColumn": 6
             },
-            "leadingMinutiae": [
-              {
-                "kind": "END_OF_LINE_MINUTIAE",
-                "minutiae": "\n",
-                "isInvalid": false
-              }
-            ],
             "trailingMinutiae": [
               {
                 "kind": "WHITESPACE_MINUTIAE",
                 "minutiae": " ",
+                "isInvalid": false
+              }
+            ],
+            "leadingMinutiae": [
+              {
+                "kind": "END_OF_LINE_MINUTIAE",
+                "minutiae": "\n",
                 "isInvalid": false
               }
             ]
@@ -181,14 +181,14 @@
             "endLine": 2,
             "endColumn": 15
           },
-          "leadingMinutiae": [],
           "trailingMinutiae": [
             {
               "kind": "WHITESPACE_MINUTIAE",
               "minutiae": " ",
               "isInvalid": false
             }
-          ]
+          ],
+          "leadingMinutiae": []
         },
         "functionName": {
           "kind": "IdentifierToken",
@@ -201,8 +201,8 @@
             "endLine": 2,
             "endColumn": 19
           },
-          "leadingMinutiae": [],
-          "trailingMinutiae": []
+          "trailingMinutiae": [],
+          "leadingMinutiae": []
         },
         "relativeResourcePath": [],
         "functionSignature": {
@@ -218,8 +218,8 @@
               "endLine": 2,
               "endColumn": 20
             },
-            "leadingMinutiae": [],
-            "trailingMinutiae": []
+            "trailingMinutiae": [],
+            "leadingMinutiae": []
           },
           "parameters": [],
           "closeParenToken": {
@@ -233,18 +233,17 @@
               "endLine": 2,
               "endColumn": 21
             },
-            "leadingMinutiae": [],
             "trailingMinutiae": [
               {
                 "kind": "WHITESPACE_MINUTIAE",
                 "minutiae": " ",
                 "isInvalid": false
               }
-            ]
+            ],
+            "leadingMinutiae": []
           },
           "source": "() ",
           "syntaxDiagnostics": [],
-          "leadingMinutiae": [],
           "trailingMinutiae": [
             {
               "kind": "WHITESPACE_MINUTIAE",
@@ -252,6 +251,7 @@
               "isInvalid": false
             }
           ],
+          "leadingMinutiae": [],
           "position": {
             "startLine": 2,
             "startColumn": 19,
@@ -275,14 +275,14 @@
               "endLine": 2,
               "endColumn": 23
             },
-            "leadingMinutiae": [],
             "trailingMinutiae": [
               {
                 "kind": "END_OF_LINE_MINUTIAE",
                 "minutiae": "\n",
                 "isInvalid": false
               }
-            ]
+            ],
+            "leadingMinutiae": []
           },
           "statements": [
             {
@@ -303,34 +303,34 @@
                       "endLine": 3,
                       "endColumn": 7
                     },
-                    "leadingMinutiae": [
-                      {
-                        "kind": "WHITESPACE_MINUTIAE",
-                        "minutiae": "    ",
-                        "isInvalid": false
-                      }
-                    ],
                     "trailingMinutiae": [
                       {
                         "kind": "WHITESPACE_MINUTIAE",
                         "minutiae": " ",
                         "isInvalid": false
                       }
+                    ],
+                    "leadingMinutiae": [
+                      {
+                        "kind": "WHITESPACE_MINUTIAE",
+                        "minutiae": "    ",
+                        "isInvalid": false
+                      }
                     ]
                   },
                   "source": "    int ",
                   "syntaxDiagnostics": [],
-                  "leadingMinutiae": [
-                    {
-                      "kind": "WHITESPACE_MINUTIAE",
-                      "minutiae": "    ",
-                      "isInvalid": false
-                    }
-                  ],
                   "trailingMinutiae": [
                     {
                       "kind": "WHITESPACE_MINUTIAE",
                       "minutiae": " ",
+                      "isInvalid": false
+                    }
+                  ],
+                  "leadingMinutiae": [
+                    {
+                      "kind": "WHITESPACE_MINUTIAE",
+                      "minutiae": "    ",
                       "isInvalid": false
                     }
                   ],
@@ -342,13 +342,13 @@
                   },
                   "typeData": {
                     "typeSymbol": {
-                      "typeKind": "int",
                       "kind": "TYPE",
+                      "typeKind": "int",
                       "signature": "int"
                     },
                     "symbol": {
-                      "typeKind": "int",
                       "kind": "TYPE",
+                      "typeKind": "int",
                       "signature": "int"
                     },
                     "diagnostics": []
@@ -367,18 +367,17 @@
                       "endLine": 3,
                       "endColumn": 9
                     },
-                    "leadingMinutiae": [],
                     "trailingMinutiae": [
                       {
                         "kind": "WHITESPACE_MINUTIAE",
                         "minutiae": " ",
                         "isInvalid": false
                       }
-                    ]
+                    ],
+                    "leadingMinutiae": []
                   },
                   "source": "x ",
                   "syntaxDiagnostics": [],
-                  "leadingMinutiae": [],
                   "trailingMinutiae": [
                     {
                       "kind": "WHITESPACE_MINUTIAE",
@@ -386,6 +385,7 @@
                       "isInvalid": false
                     }
                   ],
+                  "leadingMinutiae": [],
                   "position": {
                     "startLine": 3,
                     "startColumn": 8,
@@ -394,8 +394,8 @@
                   },
                   "typeData": {
                     "typeSymbol": {
-                      "typeKind": "int",
                       "kind": "TYPE",
+                      "typeKind": "int",
                       "signature": "int"
                     },
                     "symbol": {
@@ -413,17 +413,17 @@
                 },
                 "source": "    int x ",
                 "syntaxDiagnostics": [],
-                "leadingMinutiae": [
-                  {
-                    "kind": "WHITESPACE_MINUTIAE",
-                    "minutiae": "    ",
-                    "isInvalid": false
-                  }
-                ],
                 "trailingMinutiae": [
                   {
                     "kind": "WHITESPACE_MINUTIAE",
                     "minutiae": " ",
+                    "isInvalid": false
+                  }
+                ],
+                "leadingMinutiae": [
+                  {
+                    "kind": "WHITESPACE_MINUTIAE",
+                    "minutiae": "    ",
                     "isInvalid": false
                   }
                 ],
@@ -450,7 +450,7 @@
               "equalsToken": {
                 "kind": "EqualToken",
                 "isToken": true,
-                "value": "\u003d",
+                "value": "=",
                 "isMissing": false,
                 "position": {
                   "startLine": 3,
@@ -458,14 +458,14 @@
                   "endLine": 3,
                   "endColumn": 11
                 },
-                "leadingMinutiae": [],
                 "trailingMinutiae": [
                   {
                     "kind": "WHITESPACE_MINUTIAE",
                     "minutiae": " ",
                     "isInvalid": false
                   }
-                ]
+                ],
+                "leadingMinutiae": []
               },
               "initializer": {
                 "kind": "NumericLiteral",
@@ -480,13 +480,13 @@
                     "endLine": 3,
                     "endColumn": 14
                   },
-                  "leadingMinutiae": [],
-                  "trailingMinutiae": []
+                  "trailingMinutiae": [],
+                  "leadingMinutiae": []
                 },
                 "source": "10",
                 "syntaxDiagnostics": [],
-                "leadingMinutiae": [],
                 "trailingMinutiae": [],
+                "leadingMinutiae": [],
                 "position": {
                   "startLine": 3,
                   "startColumn": 12,
@@ -495,8 +495,8 @@
                 },
                 "typeData": {
                   "typeSymbol": {
-                    "typeKind": "int",
                     "kind": "TYPE",
+                    "typeKind": "int",
                     "signature": "int"
                   },
                   "diagnostics": []
@@ -513,28 +513,28 @@
                   "endLine": 3,
                   "endColumn": 15
                 },
-                "leadingMinutiae": [],
                 "trailingMinutiae": [
                   {
                     "kind": "END_OF_LINE_MINUTIAE",
                     "minutiae": "\n",
                     "isInvalid": false
                   }
-                ]
+                ],
+                "leadingMinutiae": []
               },
-              "source": "    int x \u003d 10;\n",
+              "source": "    int x = 10;\n",
               "syntaxDiagnostics": [],
-              "leadingMinutiae": [
-                {
-                  "kind": "WHITESPACE_MINUTIAE",
-                  "minutiae": "    ",
-                  "isInvalid": false
-                }
-              ],
               "trailingMinutiae": [
                 {
                   "kind": "END_OF_LINE_MINUTIAE",
                   "minutiae": "\n",
+                  "isInvalid": false
+                }
+              ],
+              "leadingMinutiae": [
+                {
+                  "kind": "WHITESPACE_MINUTIAE",
+                  "minutiae": "    ",
                   "isInvalid": false
                 }
               ],
@@ -546,8 +546,8 @@
               },
               "typeData": {
                 "typeSymbol": {
-                  "typeKind": "int",
                   "kind": "TYPE",
+                  "typeKind": "int",
                   "signature": "int"
                 },
                 "symbol": {
@@ -581,34 +581,34 @@
                       "endLine": 4,
                       "endColumn": 7
                     },
-                    "leadingMinutiae": [
-                      {
-                        "kind": "WHITESPACE_MINUTIAE",
-                        "minutiae": "    ",
-                        "isInvalid": false
-                      }
-                    ],
                     "trailingMinutiae": [
                       {
                         "kind": "WHITESPACE_MINUTIAE",
                         "minutiae": " ",
                         "isInvalid": false
                       }
+                    ],
+                    "leadingMinutiae": [
+                      {
+                        "kind": "WHITESPACE_MINUTIAE",
+                        "minutiae": "    ",
+                        "isInvalid": false
+                      }
                     ]
                   },
                   "source": "    int ",
                   "syntaxDiagnostics": [],
-                  "leadingMinutiae": [
-                    {
-                      "kind": "WHITESPACE_MINUTIAE",
-                      "minutiae": "    ",
-                      "isInvalid": false
-                    }
-                  ],
                   "trailingMinutiae": [
                     {
                       "kind": "WHITESPACE_MINUTIAE",
                       "minutiae": " ",
+                      "isInvalid": false
+                    }
+                  ],
+                  "leadingMinutiae": [
+                    {
+                      "kind": "WHITESPACE_MINUTIAE",
+                      "minutiae": "    ",
                       "isInvalid": false
                     }
                   ],
@@ -620,13 +620,13 @@
                   },
                   "typeData": {
                     "typeSymbol": {
-                      "typeKind": "int",
                       "kind": "TYPE",
+                      "typeKind": "int",
                       "signature": "int"
                     },
                     "symbol": {
-                      "typeKind": "int",
                       "kind": "TYPE",
+                      "typeKind": "int",
                       "signature": "int"
                     },
                     "diagnostics": []
@@ -645,18 +645,17 @@
                       "endLine": 4,
                       "endColumn": 9
                     },
-                    "leadingMinutiae": [],
                     "trailingMinutiae": [
                       {
                         "kind": "WHITESPACE_MINUTIAE",
                         "minutiae": " ",
                         "isInvalid": false
                       }
-                    ]
+                    ],
+                    "leadingMinutiae": []
                   },
                   "source": "y ",
                   "syntaxDiagnostics": [],
-                  "leadingMinutiae": [],
                   "trailingMinutiae": [
                     {
                       "kind": "WHITESPACE_MINUTIAE",
@@ -664,6 +663,7 @@
                       "isInvalid": false
                     }
                   ],
+                  "leadingMinutiae": [],
                   "position": {
                     "startLine": 4,
                     "startColumn": 8,
@@ -672,8 +672,8 @@
                   },
                   "typeData": {
                     "typeSymbol": {
-                      "typeKind": "int",
                       "kind": "TYPE",
+                      "typeKind": "int",
                       "signature": "int"
                     },
                     "symbol": {
@@ -691,17 +691,17 @@
                 },
                 "source": "    int y ",
                 "syntaxDiagnostics": [],
-                "leadingMinutiae": [
-                  {
-                    "kind": "WHITESPACE_MINUTIAE",
-                    "minutiae": "    ",
-                    "isInvalid": false
-                  }
-                ],
                 "trailingMinutiae": [
                   {
                     "kind": "WHITESPACE_MINUTIAE",
                     "minutiae": " ",
+                    "isInvalid": false
+                  }
+                ],
+                "leadingMinutiae": [
+                  {
+                    "kind": "WHITESPACE_MINUTIAE",
+                    "minutiae": "    ",
                     "isInvalid": false
                   }
                 ],
@@ -728,7 +728,7 @@
               "equalsToken": {
                 "kind": "EqualToken",
                 "isToken": true,
-                "value": "\u003d",
+                "value": "=",
                 "isMissing": false,
                 "position": {
                   "startLine": 4,
@@ -736,14 +736,14 @@
                   "endLine": 4,
                   "endColumn": 11
                 },
-                "leadingMinutiae": [],
                 "trailingMinutiae": [
                   {
                     "kind": "WHITESPACE_MINUTIAE",
                     "minutiae": " ",
                     "isInvalid": false
                   }
-                ]
+                ],
+                "leadingMinutiae": []
               },
               "initializer": {
                 "kind": "NumericLiteral",
@@ -758,13 +758,13 @@
                     "endLine": 4,
                     "endColumn": 14
                   },
-                  "leadingMinutiae": [],
-                  "trailingMinutiae": []
+                  "trailingMinutiae": [],
+                  "leadingMinutiae": []
                 },
                 "source": "20",
                 "syntaxDiagnostics": [],
-                "leadingMinutiae": [],
                 "trailingMinutiae": [],
+                "leadingMinutiae": [],
                 "position": {
                   "startLine": 4,
                   "startColumn": 12,
@@ -773,8 +773,8 @@
                 },
                 "typeData": {
                   "typeSymbol": {
-                    "typeKind": "int",
                     "kind": "TYPE",
+                    "typeKind": "int",
                     "signature": "int"
                   },
                   "diagnostics": []
@@ -791,28 +791,28 @@
                   "endLine": 4,
                   "endColumn": 15
                 },
-                "leadingMinutiae": [],
                 "trailingMinutiae": [
                   {
                     "kind": "END_OF_LINE_MINUTIAE",
                     "minutiae": "\n",
                     "isInvalid": false
                   }
-                ]
+                ],
+                "leadingMinutiae": []
               },
-              "source": "    int y \u003d 20;\n",
+              "source": "    int y = 20;\n",
               "syntaxDiagnostics": [],
-              "leadingMinutiae": [
-                {
-                  "kind": "WHITESPACE_MINUTIAE",
-                  "minutiae": "    ",
-                  "isInvalid": false
-                }
-              ],
               "trailingMinutiae": [
                 {
                   "kind": "END_OF_LINE_MINUTIAE",
                   "minutiae": "\n",
+                  "isInvalid": false
+                }
+              ],
+              "leadingMinutiae": [
+                {
+                  "kind": "WHITESPACE_MINUTIAE",
+                  "minutiae": "    ",
                   "isInvalid": false
                 }
               ],
@@ -824,8 +824,8 @@
               },
               "typeData": {
                 "typeSymbol": {
-                  "typeKind": "int",
                   "kind": "TYPE",
+                  "typeKind": "int",
                   "signature": "int"
                 },
                 "symbol": {
@@ -850,22 +850,22 @@
                   "modulePrefix": {
                     "kind": "IdentifierToken",
                     "isToken": true,
-                    "value": "module1",
+                    "value": "log",
                     "isMissing": false,
                     "position": {
                       "startLine": 5,
                       "startColumn": 4,
                       "endLine": 5,
-                      "endColumn": 11
+                      "endColumn": 7
                     },
+                    "trailingMinutiae": [],
                     "leadingMinutiae": [
                       {
                         "kind": "WHITESPACE_MINUTIAE",
                         "minutiae": "    ",
                         "isInvalid": false
                       }
-                    ],
-                    "trailingMinutiae": []
+                    ]
                   },
                   "colon": {
                     "kind": "ColonToken",
@@ -874,29 +874,30 @@
                     "isMissing": false,
                     "position": {
                       "startLine": 5,
-                      "startColumn": 11,
+                      "startColumn": 7,
                       "endLine": 5,
-                      "endColumn": 12
+                      "endColumn": 8
                     },
-                    "leadingMinutiae": [],
-                    "trailingMinutiae": []
+                    "trailingMinutiae": [],
+                    "leadingMinutiae": []
                   },
                   "identifier": {
                     "kind": "IdentifierToken",
                     "isToken": true,
-                    "value": "function3",
+                    "value": "printInfo",
                     "isMissing": false,
                     "position": {
                       "startLine": 5,
-                      "startColumn": 12,
+                      "startColumn": 8,
                       "endLine": 5,
-                      "endColumn": 21
+                      "endColumn": 17
                     },
-                    "leadingMinutiae": [],
-                    "trailingMinutiae": []
+                    "trailingMinutiae": [],
+                    "leadingMinutiae": []
                   },
-                  "source": "    module1:function3",
+                  "source": "    log:printInfo",
                   "syntaxDiagnostics": [],
+                  "trailingMinutiae": [],
                   "leadingMinutiae": [
                     {
                       "kind": "WHITESPACE_MINUTIAE",
@@ -904,29 +905,28 @@
                       "isInvalid": false
                     }
                   ],
-                  "trailingMinutiae": [],
                   "position": {
                     "startLine": 5,
                     "startColumn": 4,
                     "endLine": 5,
-                    "endColumn": 21
+                    "endColumn": 17
                   },
                   "typeData": {
                     "typeSymbol": {
-                      "typeKind": "int",
                       "kind": "TYPE",
-                      "signature": "int"
+                      "typeKind": "nil",
+                      "signature": "()"
                     },
                     "symbol": {
-                      "external": false,
                       "deprecated": false,
                       "moduleID": {
                         "orgName": "ballerina",
-                        "packageName": "module1",
-                        "moduleName": "module1",
-                        "version": "0.1.0"
+                        "packageName": "log",
+                        "moduleName": "log",
+                        "version": "2.12.0"
                       },
-                      "kind": "FUNCTION"
+                      "kind": "FUNCTION",
+                      "external": false
                     },
                     "diagnostics": []
                   }
@@ -938,86 +938,66 @@
                   "isMissing": false,
                   "position": {
                     "startLine": 5,
-                    "startColumn": 21,
+                    "startColumn": 17,
                     "endLine": 5,
-                    "endColumn": 22
+                    "endColumn": 18
                   },
-                  "leadingMinutiae": [],
-                  "trailingMinutiae": []
+                  "trailingMinutiae": [],
+                  "leadingMinutiae": []
                 },
                 "arguments": [
                   {
                     "kind": "PositionalArg",
                     "expression": {
-                      "kind": "SimpleNameReference",
-                      "name": {
-                        "kind": "IdentifierToken",
+                      "kind": "StringLiteral",
+                      "literalToken": {
+                        "kind": "StringLiteralToken",
                         "isToken": true,
-                        "value": "x",
+                        "value": "\"sum\"",
                         "isMissing": false,
                         "position": {
                           "startLine": 5,
-                          "startColumn": 22,
+                          "startColumn": 18,
                           "endLine": 5,
                           "endColumn": 23
                         },
-                        "leadingMinutiae": [],
-                        "trailingMinutiae": []
+                        "trailingMinutiae": [],
+                        "leadingMinutiae": []
                       },
-                      "source": "x",
+                      "source": "\"sum\"",
                       "syntaxDiagnostics": [],
-                      "leadingMinutiae": [],
                       "trailingMinutiae": [],
+                      "leadingMinutiae": [],
                       "position": {
                         "startLine": 5,
-                        "startColumn": 22,
+                        "startColumn": 18,
                         "endLine": 5,
                         "endColumn": 23
                       },
                       "typeData": {
                         "typeSymbol": {
-                          "typeKind": "int",
                           "kind": "TYPE",
-                          "signature": "int"
-                        },
-                        "symbol": {
-                          "deprecated": false,
-                          "moduleID": {
-                            "orgName": "$anon",
-                            "packageName": ".",
-                            "moduleName": ".",
-                            "version": "0.0.0"
-                          },
-                          "kind": "VARIABLE"
+                          "typeKind": "string",
+                          "signature": "string"
                         },
                         "diagnostics": []
                       }
                     },
-                    "source": "x",
+                    "source": "\"sum\"",
                     "syntaxDiagnostics": [],
-                    "leadingMinutiae": [],
                     "trailingMinutiae": [],
+                    "leadingMinutiae": [],
                     "position": {
                       "startLine": 5,
-                      "startColumn": 22,
+                      "startColumn": 18,
                       "endLine": 5,
                       "endColumn": 23
                     },
                     "typeData": {
                       "typeSymbol": {
-                        "typeKind": "int",
                         "kind": "TYPE",
-                        "signature": "int"
-                      },
-                      "symbol": {
-                        "deprecated": false,
-                        "moduleID": {
-                          "orgName": "$anon",
-                          "packageName": ".",
-                          "moduleName": ".",
-                          "version": "0.0.0"
-                        },
-                        "kind": "VARIABLE"
+                        "typeKind": "string",
+                        "signature": "string"
                       },
                       "diagnostics": []
                     }
@@ -1033,47 +1013,221 @@
                       "endLine": 5,
                       "endColumn": 24
                     },
-                    "leadingMinutiae": [],
                     "trailingMinutiae": [
                       {
                         "kind": "WHITESPACE_MINUTIAE",
                         "minutiae": " ",
                         "isInvalid": false
                       }
-                    ]
+                    ],
+                    "leadingMinutiae": []
                   },
                   {
-                    "kind": "PositionalArg",
-                    "expression": {
+                    "kind": "NamedArg",
+                    "argumentName": {
                       "kind": "SimpleNameReference",
                       "name": {
                         "kind": "IdentifierToken",
                         "isToken": true,
-                        "value": "y",
+                        "value": "result",
                         "isMissing": false,
                         "position": {
                           "startLine": 5,
                           "startColumn": 25,
                           "endLine": 5,
-                          "endColumn": 26
+                          "endColumn": 31
                         },
-                        "leadingMinutiae": [],
-                        "trailingMinutiae": []
+                        "trailingMinutiae": [
+                          {
+                            "kind": "WHITESPACE_MINUTIAE",
+                            "minutiae": " ",
+                            "isInvalid": false
+                          }
+                        ],
+                        "leadingMinutiae": []
                       },
-                      "source": "y",
+                      "source": "result ",
                       "syntaxDiagnostics": [],
+                      "trailingMinutiae": [
+                        {
+                          "kind": "WHITESPACE_MINUTIAE",
+                          "minutiae": " ",
+                          "isInvalid": false
+                        }
+                      ],
                       "leadingMinutiae": [],
-                      "trailingMinutiae": [],
                       "position": {
                         "startLine": 5,
                         "startColumn": 25,
                         "endLine": 5,
-                        "endColumn": 26
+                        "endColumn": 31
+                      },
+                      "typeData": {
+                        "symbol": {
+                          "deprecated": false,
+                          "kind": "VARIABLE"
+                        },
+                        "diagnostics": []
+                      }
+                    },
+                    "equalsToken": {
+                      "kind": "EqualToken",
+                      "isToken": true,
+                      "value": "=",
+                      "isMissing": false,
+                      "position": {
+                        "startLine": 5,
+                        "startColumn": 32,
+                        "endLine": 5,
+                        "endColumn": 33
+                      },
+                      "trailingMinutiae": [
+                        {
+                          "kind": "WHITESPACE_MINUTIAE",
+                          "minutiae": " ",
+                          "isInvalid": false
+                        }
+                      ],
+                      "leadingMinutiae": []
+                    },
+                    "expression": {
+                      "kind": "BinaryExpression",
+                      "lhsExpr": {
+                        "kind": "SimpleNameReference",
+                        "name": {
+                          "kind": "IdentifierToken",
+                          "isToken": true,
+                          "value": "x",
+                          "isMissing": false,
+                          "position": {
+                            "startLine": 5,
+                            "startColumn": 34,
+                            "endLine": 5,
+                            "endColumn": 35
+                          },
+                          "trailingMinutiae": [
+                            {
+                              "kind": "WHITESPACE_MINUTIAE",
+                              "minutiae": " ",
+                              "isInvalid": false
+                            }
+                          ],
+                          "leadingMinutiae": []
+                        },
+                        "source": "x ",
+                        "syntaxDiagnostics": [],
+                        "trailingMinutiae": [
+                          {
+                            "kind": "WHITESPACE_MINUTIAE",
+                            "minutiae": " ",
+                            "isInvalid": false
+                          }
+                        ],
+                        "leadingMinutiae": [],
+                        "position": {
+                          "startLine": 5,
+                          "startColumn": 34,
+                          "endLine": 5,
+                          "endColumn": 35
+                        },
+                        "typeData": {
+                          "typeSymbol": {
+                            "kind": "TYPE",
+                            "typeKind": "int",
+                            "signature": "int"
+                          },
+                          "symbol": {
+                            "deprecated": false,
+                            "moduleID": {
+                              "orgName": "$anon",
+                              "packageName": ".",
+                              "moduleName": ".",
+                              "version": "0.0.0"
+                            },
+                            "kind": "VARIABLE"
+                          },
+                          "diagnostics": []
+                        }
+                      },
+                      "operator": {
+                        "kind": "PlusToken",
+                        "isToken": true,
+                        "value": "+",
+                        "isMissing": false,
+                        "position": {
+                          "startLine": 5,
+                          "startColumn": 36,
+                          "endLine": 5,
+                          "endColumn": 37
+                        },
+                        "trailingMinutiae": [
+                          {
+                            "kind": "WHITESPACE_MINUTIAE",
+                            "minutiae": " ",
+                            "isInvalid": false
+                          }
+                        ],
+                        "leadingMinutiae": []
+                      },
+                      "rhsExpr": {
+                        "kind": "SimpleNameReference",
+                        "name": {
+                          "kind": "IdentifierToken",
+                          "isToken": true,
+                          "value": "y",
+                          "isMissing": false,
+                          "position": {
+                            "startLine": 5,
+                            "startColumn": 38,
+                            "endLine": 5,
+                            "endColumn": 39
+                          },
+                          "trailingMinutiae": [],
+                          "leadingMinutiae": []
+                        },
+                        "source": "y",
+                        "syntaxDiagnostics": [],
+                        "trailingMinutiae": [],
+                        "leadingMinutiae": [],
+                        "position": {
+                          "startLine": 5,
+                          "startColumn": 38,
+                          "endLine": 5,
+                          "endColumn": 39
+                        },
+                        "typeData": {
+                          "typeSymbol": {
+                            "kind": "TYPE",
+                            "typeKind": "int",
+                            "signature": "int"
+                          },
+                          "symbol": {
+                            "deprecated": false,
+                            "moduleID": {
+                              "orgName": "$anon",
+                              "packageName": ".",
+                              "moduleName": ".",
+                              "version": "0.0.0"
+                            },
+                            "kind": "VARIABLE"
+                          },
+                          "diagnostics": []
+                        }
+                      },
+                      "source": "x + y",
+                      "syntaxDiagnostics": [],
+                      "trailingMinutiae": [],
+                      "leadingMinutiae": [],
+                      "position": {
+                        "startLine": 5,
+                        "startColumn": 34,
+                        "endLine": 5,
+                        "endColumn": 39
                       },
                       "typeData": {
                         "typeSymbol": {
-                          "typeKind": "int",
                           "kind": "TYPE",
+                          "typeKind": "int",
                           "signature": "int"
                         },
                         "symbol": {
@@ -1089,31 +1243,21 @@
                         "diagnostics": []
                       }
                     },
-                    "source": "y",
+                    "source": "result = x + y",
                     "syntaxDiagnostics": [],
-                    "leadingMinutiae": [],
                     "trailingMinutiae": [],
+                    "leadingMinutiae": [],
                     "position": {
                       "startLine": 5,
                       "startColumn": 25,
                       "endLine": 5,
-                      "endColumn": 26
+                      "endColumn": 39
                     },
                     "typeData": {
                       "typeSymbol": {
-                        "typeKind": "int",
                         "kind": "TYPE",
+                        "typeKind": "int",
                         "signature": "int"
-                      },
-                      "symbol": {
-                        "deprecated": false,
-                        "moduleID": {
-                          "orgName": "$anon",
-                          "packageName": ".",
-                          "moduleName": ".",
-                          "version": "0.0.0"
-                        },
-                        "kind": "VARIABLE"
                       },
                       "diagnostics": []
                     }
@@ -1126,15 +1270,16 @@
                   "isMissing": false,
                   "position": {
                     "startLine": 5,
-                    "startColumn": 26,
+                    "startColumn": 39,
                     "endLine": 5,
-                    "endColumn": 27
+                    "endColumn": 40
                   },
-                  "leadingMinutiae": [],
-                  "trailingMinutiae": []
+                  "trailingMinutiae": [],
+                  "leadingMinutiae": []
                 },
-                "source": "    module1:function3(x, y)",
+                "source": "    log:printInfo(\"sum\", result = x + y)",
                 "syntaxDiagnostics": [],
+                "trailingMinutiae": [],
                 "leadingMinutiae": [
                   {
                     "kind": "WHITESPACE_MINUTIAE",
@@ -1142,29 +1287,28 @@
                     "isInvalid": false
                   }
                 ],
-                "trailingMinutiae": [],
                 "position": {
                   "startLine": 5,
                   "startColumn": 4,
                   "endLine": 5,
-                  "endColumn": 27
+                  "endColumn": 40
                 },
                 "typeData": {
                   "typeSymbol": {
-                    "typeKind": "int",
                     "kind": "TYPE",
-                    "signature": "int"
+                    "typeKind": "nil",
+                    "signature": "()"
                   },
                   "symbol": {
-                    "external": false,
                     "deprecated": false,
                     "moduleID": {
                       "orgName": "ballerina",
-                      "packageName": "module1",
-                      "moduleName": "module1",
-                      "version": "0.1.0"
+                      "packageName": "log",
+                      "moduleName": "log",
+                      "version": "2.12.0"
                     },
-                    "kind": "FUNCTION"
+                    "kind": "FUNCTION",
+                    "external": false
                   },
                   "diagnostics": []
                 }
@@ -1176,28 +1320,21 @@
                 "isMissing": false,
                 "position": {
                   "startLine": 5,
-                  "startColumn": 27,
+                  "startColumn": 40,
                   "endLine": 5,
-                  "endColumn": 28
+                  "endColumn": 41
                 },
-                "leadingMinutiae": [],
                 "trailingMinutiae": [
                   {
                     "kind": "END_OF_LINE_MINUTIAE",
                     "minutiae": "\n",
                     "isInvalid": false
                   }
-                ]
+                ],
+                "leadingMinutiae": []
               },
-              "source": "    module1:function3(x, y);\n",
+              "source": "    log:printInfo(\"sum\", result = x + y);\n",
               "syntaxDiagnostics": [],
-              "leadingMinutiae": [
-                {
-                  "kind": "WHITESPACE_MINUTIAE",
-                  "minutiae": "    ",
-                  "isInvalid": false
-                }
-              ],
               "trailingMinutiae": [
                 {
                   "kind": "END_OF_LINE_MINUTIAE",
@@ -1205,27 +1342,26 @@
                   "isInvalid": false
                 }
               ],
+              "leadingMinutiae": [
+                {
+                  "kind": "WHITESPACE_MINUTIAE",
+                  "minutiae": "    ",
+                  "isInvalid": false
+                }
+              ],
               "position": {
                 "startLine": 5,
                 "startColumn": 4,
                 "endLine": 5,
-                "endColumn": 28
+                "endColumn": 41
               },
               "typeData": {
                 "typeSymbol": {
-                  "typeKind": "int",
                   "kind": "TYPE",
-                  "signature": "int"
+                  "typeKind": "nil",
+                  "signature": "()"
                 },
-                "diagnostics": [
-                  {
-                    "message": "variable assignment is required",
-                    "diagnosticInfo": {
-                      "code": "BCE2526",
-                      "severity": "ERROR"
-                    }
-                  }
-                ]
+                "diagnostics": []
               }
             }
           ],
@@ -1240,18 +1376,17 @@
               "endLine": 6,
               "endColumn": 1
             },
-            "leadingMinutiae": [],
             "trailingMinutiae": [
               {
                 "kind": "END_OF_LINE_MINUTIAE",
                 "minutiae": "\n",
                 "isInvalid": false
               }
-            ]
+            ],
+            "leadingMinutiae": []
           },
-          "source": "{\n    int x \u003d 10;\n    int y \u003d 20;\n    module1:function3(x, y);\n}\n",
+          "source": "{\n    int x = 10;\n    int y = 20;\n    log:printInfo(\"sum\", result = x + y);\n}\n",
           "syntaxDiagnostics": [],
-          "leadingMinutiae": [],
           "trailingMinutiae": [
             {
               "kind": "END_OF_LINE_MINUTIAE",
@@ -1259,6 +1394,7 @@
               "isInvalid": false
             }
           ],
+          "leadingMinutiae": [],
           "position": {
             "startLine": 2,
             "startColumn": 22,
@@ -1266,27 +1402,19 @@
             "endColumn": 1
           },
           "typeData": {
-            "diagnostics": [
-              {
-                "message": "variable assignment is required",
-                "diagnosticInfo": {
-                  "code": "BCE2526",
-                  "severity": "ERROR"
-                }
-              }
-            ]
+            "diagnostics": []
           }
         },
-        "source": "\npublic function bar() {\n    int x \u003d 10;\n    int y \u003d 20;\n    module1:function3(x, y);\n}\n",
+        "source": "\npublic function bar() {\n    int x = 10;\n    int y = 20;\n    log:printInfo(\"sum\", result = x + y);\n}\n",
         "syntaxDiagnostics": [],
-        "leadingMinutiae": [
+        "trailingMinutiae": [
           {
             "kind": "END_OF_LINE_MINUTIAE",
             "minutiae": "\n",
             "isInvalid": false
           }
         ],
-        "trailingMinutiae": [
+        "leadingMinutiae": [
           {
             "kind": "END_OF_LINE_MINUTIAE",
             "minutiae": "\n",
@@ -1301,7 +1429,6 @@
         },
         "typeData": {
           "symbol": {
-            "external": false,
             "deprecated": false,
             "moduleID": {
               "orgName": "$anon",
@@ -1309,17 +1436,10 @@
               "moduleName": ".",
               "version": "0.0.0"
             },
-            "kind": "FUNCTION"
+            "kind": "FUNCTION",
+            "external": false
           },
-          "diagnostics": [
-            {
-              "message": "variable assignment is required",
-              "diagnosticInfo": {
-                "code": "BCE2526",
-                "severity": "ERROR"
-              }
-            }
-          ]
+          "diagnostics": []
         }
       }
     ],
@@ -1334,14 +1454,14 @@
         "endLine": 7,
         "endColumn": 0
       },
-      "leadingMinutiae": [],
-      "trailingMinutiae": []
+      "trailingMinutiae": [],
+      "leadingMinutiae": []
     },
-    "source": "import ballerina/module1;\n\npublic function bar() {\n    int x \u003d 10;\n    int y \u003d 20;\n    module1:function3(x, y);\n}\n",
+    "source": "import ballerina/log;\n\npublic function bar() {\n    int x = 10;\n    int y = 20;\n    log:printInfo(\"sum\", result = x + y);\n}\n",
     "kind": "ModulePart",
     "syntaxDiagnostics": [],
-    "leadingMinutiae": [],
     "trailingMinutiae": [],
+    "leadingMinutiae": [],
     "position": {
       "startLine": 0,
       "startColumn": 0,
@@ -1349,15 +1469,7 @@
       "endColumn": 1
     },
     "typeData": {
-      "diagnostics": [
-        {
-          "message": "variable assignment is required",
-          "diagnosticInfo": {
-            "code": "BCE2526",
-            "severity": "ERROR"
-          }
-        }
-      ]
+      "diagnostics": []
     },
     "isNodePath": true,
     "isLocatedNode": true

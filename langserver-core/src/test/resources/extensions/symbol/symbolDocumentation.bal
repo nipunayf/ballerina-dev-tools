@@ -1,5 +1,5 @@
-import ballerina/module1;
 import ballerina/lang.'string;
+import ballerina/io;
 
 # Adds two integers.
 
@@ -15,8 +15,8 @@ public function add(int x, int y)
 
 public function main() returns error? {
     int result = add(2,3);
-    module1:function3(1,2);
-    module1:function1();
+    io:print("Result: ", result);
+    io:println()
     createPerson("test","colombo");
     Counter counter = new (12);
     File f = check new File("test.txt", "Hello World");

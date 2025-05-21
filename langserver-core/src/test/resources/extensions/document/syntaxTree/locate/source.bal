@@ -1,7 +1,7 @@
-import ballerina/module1;
+import ballerina/log;
 
 public function bar() {
     int x = 10;
     int y = 20;
-    module1:function3(x, y);
+    log:printInfo("sum", result = x + y);
 }
