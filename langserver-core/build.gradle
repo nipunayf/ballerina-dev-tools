@@ -81,21 +81,61 @@ tasks.register('copyRuntime') {
     }
 }
 
+def balDistribution = file("$project.buildDir/jballerina-tools-${ballerinaLangVersion}")
+
+task unpackJballerinaTools {
+    project.configurations.each { configuration ->
+        if (configuration.name == "externalJars") {
+            dependsOn(project.copyToLib)
+        }
+    }
+
+    doLast {
+        project.configurations.jbalTools.resolvedConfiguration.resolvedArtifacts.each { artifact ->
+            project.copy {
+                from project.zipTree(artifact.getFile())
+                into new File("${project.buildDir}/")
+            }
+        }
+    }
+}
+
+task unpackStdLibs() {
+    dependsOn(unpackJballerinaTools)
+    doLast {
+        configurations.ballerinaStdLibs.resolvedConfiguration.resolvedArtifacts.each { artifact ->
+            copy {
+                from project.zipTree(artifact.getFile())
+                into new File("${project.buildDir}/extracted-stdlibs/" + artifact.name + "-zip")
+            }
+        }
+    }
+}
+
+task copyStdlibs() {
+    dependsOn(unpackStdLibs)
+    doLast {
+        /* Standard Libraries */
+        configurations.ballerinaStdLibs.resolvedConfiguration.resolvedArtifacts.each { artifact ->
+            def artifactExtractedPath = "${project.buildDir}/extracted-stdlibs/" + artifact.name + '-zip'
+            project.copy {
+                def ballerinaDist = "build/jballerina-tools-${project.ballerinaLangVersion}"
+                into ballerinaDist
+                into('repo/bala') {
+                    from "${artifactExtractedPath}/bala"
+                }
+                into('repo/cache') {
+                    from "${artifactExtractedPath}/cache"
+                }
+            }
+        }
+    }
+}
+
 test {
     dependsOn copyRuntime
-    doFirst {
-        def balHome = ""
-        try {
-            balHome = "bal home".execute().text.trim()
-            if (balHome.isEmpty()) {
-                throw new GradleException("'bal home' command returned empty output")
-            }
-            println "Using Ballerina home: ${balHome}"
-        } catch (Exception e) {
-            throw new GradleException("Failed to determine Ballerina home. Make sure 'bal' is installed and available in PATH.", e)
-        }
-        systemProperty "ballerina.home", balHome
-    }
+    dependsOn copyStdlibs
+    systemProperty "ballerina.home", balDistribution
 
     useTestNG() {
         suites "src/test/resources/testng.xml"

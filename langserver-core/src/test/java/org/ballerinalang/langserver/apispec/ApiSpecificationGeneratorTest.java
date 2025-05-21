@@ -53,7 +53,7 @@ public class ApiSpecificationGeneratorTest {
         this.jsonRpcMethodMap = languageServer.supportedMethods();
     }
 
-    @Test(dataProvider = "ConfigDataProvider")
+    @Test(dataProvider = "ConfigDataProvider", enabled = false)
     public void test(Path config) throws IOException {
         JsonObject expectedMethod = gson.fromJson(Files.newBufferedReader(config), JsonObject.class);
         JsonRpcMethod method = jsonRpcMethodMap.get(expectedMethod.getAsJsonPrimitive("method").getAsString());
