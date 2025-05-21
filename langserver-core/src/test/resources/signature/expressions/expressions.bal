@@ -1,5 +1,5 @@
 import ballerina/lang.'object as lang;
-import ballerina/module1;
+import ballerina/http; 
 public function expressions() returns error? {
     //expression :=
     //   literal[!]
@@ -399,12 +399,12 @@ function testConcat() {
     concat();
 }
 
-function testQNameReference() {
-    module1:function3()
+function testQNameReference() returns http:ListenerError? {
+    http:Listener defaultListener = check http:getDefaultListener();    
 }
 
-function testQNameReference2() {
-    module1:TestClass1 cls = new module1:TestClass1()
+function testQNameReference2() returns error? {
+    http:Client cl = check new ("http://localhost:8080");
 }
 
 // -- expression, function-call-expr-without-params

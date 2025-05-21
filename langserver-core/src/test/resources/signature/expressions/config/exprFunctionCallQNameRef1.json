@@ -1,69 +1,26 @@
 {
-    "position": {
-        "line": 402,
-        "character": 22
+  "position": {
+    "line": 402,
+    "character": 51
+  },
+  "source": "expressions/expressions.bal",
+  "expected": {
+    "result": {
+      "signatures": [
+        {
+          "label": "getDefaultListener()",
+          "documentation": {
+            "right": {
+              "kind": "markdown",
+              "value": "**Description**  \nReturns the default HTTP listener. If the default listener is not already created, a new\nlistener will be created with the port and configuration. An error will be returned if\nthe listener creation fails.\n\nThe default listener configuration can be changed in the `Config.toml` file. Example:\n```toml\n[ballerina.http]\ndefaultListenerPort = 8080\n[ballerina.http.defaultListenerConfig]\nhttpVersion = \"1.1\"\n[ballerina.http.defaultListenerConfig.secureSocket.key]\npath = \"resources/certs/key.pem\"\npassword = \"password\"\n```"
+            }
+          },
+          "parameters": []
+        }
+      ],
+      "activeSignature": 0,
+      "activeParameter": 0
     },
-    "source": "expressions/expressions.bal",
-    "expected": {
-        "result": {
-            "signatures": [
-                {
-                    "label": "function3(int param1, int param2, float... param3)",
-                    "documentation": {
-                        "right": {
-                            "kind": "markdown",
-                            "value": "**Description**  \nThis is function3 with input parameters"
-                        }
-                    },
-                    "parameters": [
-                        {
-                            "label": {
-                                "right": {
-                                    "first": 14,
-                                    "second": 20
-                                }
-                            },
-                            "documentation": {
-                                "right": {
-                                    "kind": "markdown",
-                                    "value": "**Parameter**  \n**`int`param1**: param1 Parameter Description "
-                                }
-                            }
-                        },
-                        {
-                            "label": {
-                                "right": {
-                                    "first": 26,
-                                    "second": 32
-                                }
-                            },
-                            "documentation": {
-                                "right": {
-                                    "kind": "markdown",
-                                    "value": "**Parameter**  \n**`int`param2**: param2 Parameter Description"
-                                }
-                            }
-                        },
-                        {
-                            "label": {
-                                "right": {
-                                    "first": 43,
-                                    "second": 49
-                                }
-                            },
-                            "documentation": {
-                                "right": {
-                                    "kind": "markdown",
-                                    "value": "**Parameter**  \n**`float...`param3**: param3 Parameter Description"
-                                }
-                            }
-                        }
-                    ]
-                }
-            ],
-            "activeSignature": 0,
-            "activeParameter": 0
-        },
-        "jsonrpc": "2.0"
-    }
+    "jsonrpc": "2.0"
+  }
 }

@@ -1,8 +1,8 @@
-import ballerina/module1;
+import ballerina/http;
 
 type Response record {
     json body;
-    module1:TestRecord1 rec1;
+    http:RetryConfig retryConfig;
 };
 
 public function main() {

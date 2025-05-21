@@ -1,49 +1,346 @@
 {
-    "position": {
-        "line": 406,
-        "character": 52
-    },
-    "source": "expressions/expressions.bal",
-    "expected": {
-        "result": {
-            "signatures": [
-                {
-                    "label": "new(int field1, int field2)",
-                    "parameters": [
-                        {
-                            "label": {
-                                "right": {
-                                    "first": 8,
-                                    "second": 14
-                                }
-                            },
-                            "documentation": {
-                                "right": {
-                                    "kind": "markdown",
-                                    "value": "**Parameter**  \n**`int`field1**"
-                                }
-                            }
-                        },
-                        {
-                            "label": {
-                                "right": {
-                                    "first": 20,
-                                    "second": 26
-                                }
-                            },
-                            "documentation": {
-                                "right": {
-                                    "kind": "markdown",
-                                    "value": "**Parameter**  \n**`int`field2**"
-                                }
-                            }
-                        }
-                    ]
+  "position": {
+    "line": 406,
+    "character": 29
+  },
+  "source": "expressions/expressions.bal",
+  "expected": {
+    "result": {
+      "signatures": [
+        {
+          "label": "new(string url, http:ClientSecureSocket? secureSocket, http:HttpVersion httpVersion, http:ClientHttp1Settings http1Settings, http:ClientHttp2Settings http2Settings, decimal timeout, string forwarded, http:FollowRedirects? followRedirects, http:PoolConfiguration? poolConfig, http:CacheConfig cache, http:Compression compression, http:ClientAuthConfig? auth, http:CircuitBreakerConfig? circuitBreaker, http:RetryConfig? retryConfig, http:CookieConfig? cookieConfig, http:ResponseLimitConfigs responseLimits, http:ProxyConfig? proxy, boolean validation, http:ClientSocketConfig socketConfig, boolean laxDataBinding)",
+          "documentation": {
+            "right": {
+              "kind": "markdown",
+              "value": "**Description**  \nGets invoked to initialize the `client`. During initialization, the configurations provided through the `config`\nrecord is used to determine which type of additional behaviours are added to the endpoint (e.g., caching,\nsecurity, circuit breaking)."
+            }
+          },
+          "parameters": [
+            {
+              "label": {
+                "right": {
+                  "first": 11,
+                  "second": 14
                 }
-            ],
-            "activeSignature": 0,
-            "activeParameter": 0
+              },
+              "documentation": {
+                "right": {
+                  "kind": "markdown",
+                  "value": "**Parameter**  \n**`string`url**: URL of the target service"
+                }
+              }
+            },
+            {
+              "label": {
+                "right": {
+                  "first": 41,
+                  "second": 53
+                }
+              },
+              "documentation": {
+                "right": {
+                  "kind": "markdown",
+                  "value": "**Parameter**  \n**`ballerina/http:2.14.1:ClientSecureSocket?`secureSocket**: SSL/TLS-related options"
+                }
+              }
+            },
+            {
+              "label": {
+                "right": {
+                  "first": 72,
+                  "second": 83
+                }
+              },
+              "documentation": {
+                "right": {
+                  "kind": "markdown",
+                  "value": "**Parameter**  \n**`ballerina/http:2.14.1:HttpVersion`httpVersion**: ballerina/http:2.14.1:HttpVersion httpVersion"
+                }
+              }
+            },
+            {
+              "label": {
+                "right": {
+                  "first": 110,
+                  "second": 123
+                }
+              },
+              "documentation": {
+                "right": {
+                  "kind": "markdown",
+                  "value": "**Parameter**  \n**`ballerina/http:2.14.1:ClientHttp1Settings`http1Settings**: ballerina/http:2.14.1:ClientHttp1Settings http1Settings"
+                }
+              }
+            },
+            {
+              "label": {
+                "right": {
+                  "first": 150,
+                  "second": 163
+                }
+              },
+              "documentation": {
+                "right": {
+                  "kind": "markdown",
+                  "value": "**Parameter**  \n**`ballerina/http:2.14.1:ClientHttp2Settings`http2Settings**: ballerina/http:2.14.1:ClientHttp2Settings http2Settings"
+                }
+              }
+            },
+            {
+              "label": {
+                "right": {
+                  "first": 173,
+                  "second": 180
+                }
+              },
+              "documentation": {
+                "right": {
+                  "kind": "markdown",
+                  "value": "**Parameter**  \n**`decimal`timeout**: decimal timeout"
+                }
+              }
+            },
+            {
+              "label": {
+                "right": {
+                  "first": 189,
+                  "second": 198
+                }
+              },
+              "documentation": {
+                "right": {
+                  "kind": "markdown",
+                  "value": "**Parameter**  \n**`string`forwarded**: string forwarded"
+                }
+              }
+            },
+            {
+              "label": {
+                "right": {
+                  "first": 222,
+                  "second": 237
+                }
+              },
+              "documentation": {
+                "right": {
+                  "kind": "markdown",
+                  "value": "**Parameter**  \n**`ballerina/http:2.14.1:FollowRedirects?`followRedirects**: ballerina/http:2.14.1:FollowRedirects? followRedirects"
+                }
+              }
+            },
+            {
+              "label": {
+                "right": {
+                  "first": 263,
+                  "second": 273
+                }
+              },
+              "documentation": {
+                "right": {
+                  "kind": "markdown",
+                  "value": "**Parameter**  \n**`ballerina/http:2.14.1:PoolConfiguration?`poolConfig**: ballerina/http:2.14.1:PoolConfiguration? poolConfig"
+                }
+              }
+            },
+            {
+              "label": {
+                "right": {
+                  "first": 292,
+                  "second": 297
+                }
+              },
+              "documentation": {
+                "right": {
+                  "kind": "markdown",
+                  "value": "**Parameter**  \n**`ballerina/http:2.14.1:CacheConfig`cache**: ballerina/http:2.14.1:CacheConfig cache"
+                }
+              }
+            },
+            {
+              "label": {
+                "right": {
+                  "first": 316,
+                  "second": 327
+                }
+              },
+              "documentation": {
+                "right": {
+                  "kind": "markdown",
+                  "value": "**Parameter**  \n**`ballerina/http:2.14.1:Compression`compression**: ballerina/http:2.14.1:Compression compression"
+                }
+              }
+            },
+            {
+              "label": {
+                "right": {
+                  "first": 352,
+                  "second": 356
+                }
+              },
+              "documentation": {
+                "right": {
+                  "kind": "markdown",
+                  "value": "**Parameter**  \n**`ballerina/http:2.14.1:ClientAuthConfig?`auth**: ballerina/http:2.14.1:ClientAuthConfig? auth"
+                }
+              }
+            },
+            {
+              "label": {
+                "right": {
+                  "first": 385,
+                  "second": 399
+                }
+              },
+              "documentation": {
+                "right": {
+                  "kind": "markdown",
+                  "value": "**Parameter**  \n**`ballerina/http:2.14.1:CircuitBreakerConfig?`circuitBreaker**: ballerina/http:2.14.1:CircuitBreakerConfig? circuitBreaker"
+                }
+              }
+            },
+            {
+              "label": {
+                "right": {
+                  "first": 419,
+                  "second": 430
+                }
+              },
+              "documentation": {
+                "right": {
+                  "kind": "markdown",
+                  "value": "**Parameter**  \n**`ballerina/http:2.14.1:RetryConfig?`retryConfig**: ballerina/http:2.14.1:RetryConfig? retryConfig"
+                }
+              }
+            },
+            {
+              "label": {
+                "right": {
+                  "first": 451,
+                  "second": 463
+                }
+              },
+              "documentation": {
+                "right": {
+                  "kind": "markdown",
+                  "value": "**Parameter**  \n**`ballerina/http:2.14.1:CookieConfig?`cookieConfig**: ballerina/http:2.14.1:CookieConfig? cookieConfig"
+                }
+              }
+            },
+            {
+              "label": {
+                "right": {
+                  "first": 491,
+                  "second": 505
+                }
+              },
+              "documentation": {
+                "right": {
+                  "kind": "markdown",
+                  "value": "**Parameter**  \n**`ballerina/http:2.14.1:ResponseLimitConfigs`responseLimits**: ballerina/http:2.14.1:ResponseLimitConfigs responseLimits"
+                }
+              }
+            },
+            {
+              "label": {
+                "right": {
+                  "first": 525,
+                  "second": 530
+                }
+              },
+              "documentation": {
+                "right": {
+                  "kind": "markdown",
+                  "value": "**Parameter**  \n**`ballerina/http:2.14.1:ProxyConfig?`proxy**: ballerina/http:2.14.1:ProxyConfig? proxy"
+                }
+              }
+            },
+            {
+              "label": {
+                "right": {
+                  "first": 540,
+                  "second": 550
+                }
+              },
+              "documentation": {
+                "right": {
+                  "kind": "markdown",
+                  "value": "**Parameter**  \n**`boolean`validation**: boolean validation"
+                }
+              }
+            },
+            {
+              "label": {
+                "right": {
+                  "first": 576,
+                  "second": 588
+                }
+              },
+              "documentation": {
+                "right": {
+                  "kind": "markdown",
+                  "value": "**Parameter**  \n**`ballerina/http:2.14.1:ClientSocketConfig`socketConfig**: ballerina/http:2.14.1:ClientSocketConfig socketConfig"
+                }
+              }
+            },
+            {
+              "label": {
+                "right": {
+                  "first": 598,
+                  "second": 612
+                }
+              },
+              "documentation": {
+                "right": {
+                  "kind": "markdown",
+                  "value": "**Parameter**  \n**`boolean`laxDataBinding**: boolean laxDataBinding"
+                }
+              }
+            }
+          ]
         },
-        "jsonrpc": "2.0"
-    }
+        {
+          "label": "new(string url, http:ClientConfiguration config)",
+          "documentation": {
+            "right": {
+              "kind": "markdown",
+              "value": "**Description**  \nGets invoked to initialize the `client`. During initialization, the configurations provided through the `config`\nrecord is used to determine which type of additional behaviours are added to the endpoint (e.g., caching,\nsecurity, circuit breaking)."
+            }
+          },
+          "parameters": [
+            {
+              "label": {
+                "right": {
+                  "first": 11,
+                  "second": 14
+                }
+              },
+              "documentation": {
+                "right": {
+                  "kind": "markdown",
+                  "value": "**Parameter**  \n**`string`url**: URL of the target service"
+                }
+              }
+            },
+            {
+              "label": {
+                "right": {
+                  "first": 41,
+                  "second": 47
+                }
+              },
+              "documentation": {
+                "right": {
+                  "kind": "markdown",
+                  "value": "**Parameter**  \n**`http:ClientConfiguration`config**: The configurations to be used when initializing the `client`"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "activeSignature": 0,
+      "activeParameter": 0
+    },
+    "jsonrpc": "2.0"
+  }
 }

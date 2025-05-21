@@ -8,7 +8,7 @@
     "result": {
       "signatures": [
         {
-          "label": "getInt(json body, module1:TestRecord1 rec1)",
+          "label": "getInt(json body, http:RetryConfig retryConfig)",
           "parameters": [
             {
               "label": {
@@ -27,14 +27,14 @@
             {
               "label": {
                 "right": {
-                  "first": 38,
-                  "second": 42
+                  "first": 35,
+                  "second": 46
                 }
               },
               "documentation": {
                 "right": {
                   "kind": "markdown",
-                  "value": "**Parameter**  \n**`ballerina/module1:0.1.0:TestRecord1`rec1**: ballerina/module1:0.1.0:TestRecord1 rec1"
+                  "value": "**Parameter**  \n**`ballerina/http:2.14.1:RetryConfig`retryConfig**: ballerina/http:2.14.1:RetryConfig retryConfig"
                 }
               }
             }
