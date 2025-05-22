@@ -41,6 +41,7 @@ include(':service-model-generator:service-model-index-generator')
 include(':test-manager-service:test-manager-service-ls-extension')
 include(":langserver-commons")
 include(":langserver-core")
+include(":langserver-stdlib")
 
 project(':checkstyle').projectDir = file("build-config${File.separator}checkstyle")
 project(':testerina-report-tools').projectDir = file('testerina-report-tools')
@@ -62,6 +63,7 @@ project(':service-model-generator:service-model-index-generator').projectDir = f
 project(':test-manager-service:test-manager-service-ls-extension').projectDir = file('test-manager-service/modules/test-manager-service-ls-extension')
 project(":langserver-commons").projectDir = file("langserver-commons")
 project(":langserver-core").projectDir = file("langserver-core")
+project(":langserver-stdlib").projectDir = file("langserver-stdlib")
 
 gradleEnterprise {
     buildScan {
